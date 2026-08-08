@@ -138,6 +138,22 @@ Chrome 1440×900 a 390×844, konzole bez chyb a varování. Model se načte
 a otáčí, mobilní menu se otevře i zavře po kliknutí na kotvu.
 Váha stránky při načtení hero: **4,5 MB** (z toho GLB 4,2 MB), dřív ~30 MB.
 
+## Příprava na GitHub
+
+- `index.dc.html` → **`index.html`**. GitHub Pages servíruje na kořeni jen
+  `index.html`. Ověřeno v prohlížeči, že přejmenování nic nerozbije — přípona
+  `.dc.html` nemá funkci, `support.js` zpracovává `<x-dc>` až v DOM.
+- `.gitignore` — mimo repozitář zůstávají zdroje, které web nenačítá:
+  `the car.glb` (27 MB), `kia-sportage-gt-line-2023/textures/` (12 MB),
+  `garaz.png`, `hero.png`, `logo.jpg`, `Hero.dc.html`, `.playwright-cli/`,
+  `.DS_Store`. Repo tím kleslo z 60 MB na 12 MB.
+- `README.md` — jak spustit lokálně, co je kde, na co si dát pozor při nasazení.
+- `git init` + první commit. Remote zatím není nastavený.
+
+**Ověřeno kvůli GitHub Pages:** `DRACOLoader.js:282` stahuje `.wasm` jako
+`arraybuffer`, ne přes `WebAssembly.instantiateStreaming`. MIME typ tedy nehraje
+roli a Pages nepotřebují žádnou konfiguraci. Všechny cesty jsou relativní.
+
 ## Otevřené k rozhodnutí
 
 1. **Fotky galerie** — 6 MB PNG/JPG celkem, `04.png` 704 kB, `08.png` 837 kB.
