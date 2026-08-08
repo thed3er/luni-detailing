@@ -1,0 +1,152 @@
+======================================================================
+CENÍK SLUŽEB LuNi DETAILING
+Zdroj:  https://lunidetailing.simdif.com/images/public/sd_69fafb41a0744.png
+Lokálně: web-export/obrazky/cenik.png (844 × 1265 px)
+Přepis z obrázku 8. 8. 2026, ceny ověřeny ve zvětšených výřezech
+Pozn.: na webu tyto ceny NEJSOU jako text, existují pouze uvnitř obrázku
+======================================================================
+
+
+## INTERIÉR
+
+Klasik — od 990,- Kč | Suché čištění
+  - kompletní suché vysání
+  - očištění a oživení plastů
+  - vyleštění oken
+  - provonění interiéru
+
+Premium — od 3 190,- Kč | Mokré čištění
+  - tepování textilních sedaček a koberců
+  - vyčištění a impregnace kožených sedaček
+  - parní čištění
+  - čištění mezidveřních prostor
+  - čištění větracích otvorů a ovládacích prvků
+
+
+## EXTERIÉR
+
+Exteriér Klasik — 990,- Kč
+  - ruční mytí vozu
+  - čištění kol
+  - sušení vozidla
+  - mytí podběhů
+
+Exteriér Premium — 1 990,- Kč
+  - dekontaminace laku
+  - vyleštění skel z vnější strany
+  - umytí mezidveřních prostor
+  - impregnace exteriérových plastů
+
+
+## LEŠTĚNÍ
+
+1-krokové     5 990 – 7 490 Kč
+2-krokové     9 990 – 11 490 Kč
+
+
+## KERAMICKÁ OCHRANA VOZU
+
+Ceny nezahrnují přípravu laku: + 1 500 Kč
+
+1) Roční      4 990 Kč
+2) 3letá      6 990 Kč
+
+
+## BALÍČKY
+
+1) Auto na prodej — 7 490,- Kč
+  - mokré čištění interiéru
+  - exteriér standard
+  - 1-krokové leštění
+  - dezinfekce ozonem
+
+2) Klasik — 14 990,- Kč
+  - mokré čištění
+  - exteriér standard
+  - 1-krokové leštění
+  - roční keramická ochrana
+  - dezinfekce ozonem
+
+3) Premium — 18 990,- Kč
+  - mokré čištění
+  - exteriér premium
+  - 2-krokové leštění
+  - 3letá keramická ochrana
+  - dezinfekce ozonem
+
+
+## DOPLŇKOVÉ SLUŽBY
+
+Renovace světlometů              990,- Kč
+Dezinfekce ozonem                300,- Kč
+
+Tekuté stěrače
+  - Čelní okno                   990,- Kč
+  - Komplet                      1 990,- Kč
+
+Tuhý vosk
+  - Bez přípravy                 990 – 1 490 Kč
+  - S přípravou                  2 990 – 3 490 Kč
+  - K leštění                    490 – 990 Kč
+
+
+## PŘÍPLATEK
+
+Dodávky: +20 %
+
+
+======================================================================
+PŘEHLED CEN (strojově čitelné, ceny v Kč)
+======================================================================
+
+kategorie;služba;cena_od;cena_do;pozn
+Interiér;Klasik (suché čištění);990;;cena "od"
+Interiér;Premium (mokré čištění);3190;;cena "od"
+Exteriér;Klasik;990;990;
+Exteriér;Premium;1990;1990;
+Leštění;1-krokové;5990;7490;
+Leštění;2-krokové;9990;11490;
+Keramická ochrana;Roční;4990;4990;bez přípravy laku (+1500)
+Keramická ochrana;3letá;6990;6990;bez přípravy laku (+1500)
+Keramická ochrana;Příprava laku;1500;1500;příplatek
+Balíček;Auto na prodej;7490;7490;
+Balíček;Klasik;14990;14990;
+Balíček;Premium;18990;18990;
+Doplňkové;Renovace světlometů;990;990;
+Doplňkové;Dezinfekce ozonem;300;300;
+Doplňkové;Tekuté stěrače – čelní okno;990;990;
+Doplňkové;Tekuté stěrače – komplet;1990;1990;
+Doplňkové;Tuhý vosk – bez přípravy;990;1490;
+Doplňkové;Tuhý vosk – s přípravou;2990;3490;
+Doplňkové;Tuhý vosk – k leštění;490;990;
+Příplatek;Dodávky;;;+20 % k ceně
+
+
+======================================================================
+CHYBY V ORIGINÁLNÍM OBRÁZKU (přepis výše je opravený)
+======================================================================
+
+V obrázku            Správně
+-------------------  -------------------
+nezahrnuii           nezahrnují
+3létá                3letá
+Čelni okno           Čelní okno
+provonění            (v obrázku vypadá jako "provonéni" – font, ne překlep)
+
+Dále nejednotné psaní cen: někde "990,- Kč", jinde "990 Kč",
+někde "1 490 Kč" s mezerou, jinde "1490 Kč" bez mezery.
+
+
+======================================================================
+NEJASNOSTI K OVĚŘENÍ U ZADAVATELE
+======================================================================
+
+1. "exteriér standard" v balíčcích 1) a 2) — v sekci EXTERIÉR se stupeň
+   jmenuje "Klasik", ne "standard". Jde o totéž?
+2. Interiér Klasik a Premium mají cenu "od" — od čeho se odvíjí navýšení
+   (velikost vozu, stav)? Není nikde uvedeno.
+3. Rozsahy u leštění a vosku (5 990 – 7 490 atd.) — čím je dané, kde
+   v rozsahu zákazník skončí?
+4. Příplatek "Dodávky: +20 %" — platí na všechny položky ceníku, nebo jen
+   na balíčky?
+5. Chybí informace o dobách trvání zakázek.

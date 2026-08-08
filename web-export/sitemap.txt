@@ -1,0 +1,125 @@
+SITEMAPA — lunidetailing.simdif.com
+Stav k 8. 8. 2026 (lastmod všech stránek: 2026-05-07)
+Zdroj: https://lunidetailing.simdif.com/sitemap.xml (6 URL, shodné s crawlem)
+Generátor webu: SimDif Website Builder V2.02.10953
+
+======================================================================
+STRUKTURA
+======================================================================
+
+https://lunidetailing.simdif.com/                    [Úvod / homepage]
+│   title: (prázdný)  ← chybí
+│   H2: Nabídka našich služeb
+│   obsah: pouze teaser blok s obrázkem ceníku + "Číst dále..." → /naše_služby.html
+│
+├── /o_nás.html                                      [O nás]
+│       title: O nás
+│       H2: Představení LuNi DETAILING
+│       H2: Máte dotaz ohledně služeb LuNi Detailing? Neváhejte nás kontaktovat.
+│       obsah: historie firmy, mise, vize, hodnoty, motto (nejobsáhlejší stránka)
+│       odkaz "Číst dále..." → /contact.html
+│
+├── /naše_služby.html                                [Naše služby]
+│       title: Naše služby
+│       H1: Nabídka našich služeb
+│       obsah: POUZE obrázek ceníku (sd_69fafb41a0744.png) — žádný text
+│
+├── /naše_služby-1.html                              [Fotogalerie]
+│       title: Naše služby  ← duplicitní title se stránkou výše
+│       H1: Ukázka naší práce
+│       obsah: 13 obrázků, žádný text
+│
+├── /kde_nás_najdete.html                            [Kde nás najdete]
+│       title: Kde nás najdete
+│       H1: Kde parkujeme
+│       H2: Naše sídlo
+│       obsah: Rudíkov, okres Třebíč, Vysočina; působnost celá ČR
+│
+└── /contact.html                                    [Kontakty]
+        title: Pro rezervaci termínu nás kontaktujte telefonicky nebo e-mailem.
+        H1: Máte dotaz ohledně služeb LuNi Detailing? Neváhejte nás kontaktovat.
+        obsah: telefon, WhatsApp, Facebook, Instagram, kontaktní formulář
+
+Navigace (identická na všech stránkách):
+  Logo → /
+  O nás → o_nás.html
+  Naše služby → naše_služby.html
+  Fotogalerie → naše_služby-1.html
+  Kde nás najdete → kde_nás_najdete.html
+  Kontakty → contact.html
+
+Patička: prázdná (jen dekorativní obrázek footer_001.png)
+
+======================================================================
+EXTERNÍ ODKAZY A KONTAKTY
+======================================================================
+
+Telefon (odkaz "Volat"):     tel:420728420689   → +420 728 420 689
+WhatsApp:                    https://wa.me/420733248967   → +420 733 248 967
+Facebook:                    https://www.facebook.com/share/1JDVrinn9F/?mibextid=wwXIfr
+Instagram:                   https://www.instagram.com/luni.detailing?igsh=OGFwbGJvNTV1dDM5
+E-mail:                      nikde na webu není uveden, pouze kontaktní formulář
+
+Sídlo:                       Rudíkov, okres Třebíč (Kraj Vysočina)
+Působnost:                   celá Česká republika
+
+======================================================================
+POZNÁMKY K OBSAHU (zjištěno při crawlu)
+======================================================================
+
+1. CENÍK JE POUZE OBRÁZEK
+   Stránka /naše_služby.html i homepage obsahují ceník výhradně jako PNG
+   (images/public/sd_69fafb41a0744.png, 844×1265 px). V HTML není ani jedna
+   cena, ani název služby jako text. Pro vyhledávače i AI je ceník neviditelný.
+   → Obrázek stažen do web-export/obrazky/cenik.png,
+     ceny přepsány do textu v web-export/texty/07-cenik.txt
+     (24 položek: interiér, exteriér, leštění, keramika, 3 balíčky, doplňky).
+
+2. PRÁZDNÉ META TAGY NA VŠECH 6 STRÁNKÁCH
+   meta description = prázdná, meta keywords = prázdná.
+   Homepage má navíc prázdný <title> a prázdný og:title.
+
+3. DUPLICITNÍ TITLE
+   /naše_služby.html a /naše_služby-1.html mají obě title "Naše služby",
+   přestože druhá je fotogalerie.
+
+4. ROZPOR U TELEFONNÍCH ČÍSEL
+   Tlačítko "Volat" vede na 728 420 689, WhatsApp na 733 248 967.
+   Dvě různá čísla bez vysvětlení, které je hlavní.
+
+5. DIAKRITIKA V URL
+   /o_nás.html, /naše_služby.html, /kde_nás_najdete.html — háčky a čárky
+   přímo v cestě URL. Funguje, ale při sdílení se mění na %C3%A1... .
+
+6. TEXTOVÝ OBSAH MÁ REÁLNĚ JEN JEDNA STRÁNKA
+   Změřený rozsah souvislého textu (bez nadpisů a navigace):
+     /o_nás.html            1 915 znaků
+     /kde_nás_najdete.html    161 znaků
+     /contact.html            148 znaků
+     /  (homepage)             27 znaků
+     /naše_služby.html         27 znaků
+     /naše_služby-1.html        0 znaků
+     -------------------------------------
+     CELÝ WEB               2 278 znaků
+   84 % veškerého textu webu je na jediné stránce "O nás".
+
+======================================================================
+SOUBORY V TOMTO EXPORTU
+======================================================================
+
+web-export/
+├── sitemap.txt              tento soubor
+├── sitemap-puvodni.xml      původní sitemap.xml stažená z webu
+├── obrazky/
+│   └── cenik.png            ceník stažený z webu (844×1265 px)
+└── texty/
+    ├── 01-uvod.txt
+    ├── 02-o-nas.txt
+    ├── 03-nase-sluzby.txt
+    ├── 04-fotogalerie.txt
+    ├── 05-kde-nas-najdete.txt
+    ├── 06-kontakty.txt
+    └── 07-cenik.txt         ceny přepsané z obrázku + CSV přehled
+
+Každý .txt obsahuje: URL, title, meta tagy, nadpisy a text v pořadí,
+seznam obrázků s alt texty, seznam odkazů.

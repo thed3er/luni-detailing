@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Výstupy z testování v prohlížeči
+.playwright-cli/
+
+# ---------------------------------------------------------------
+# Zdrojové soubory, které web nenačítá. Zůstávají lokálně na disku,
+# do repozitáře nepatří — GitHub Pages by je servíroval zbytečně
+# a repo by narostlo z 12 MB na 60 MB.
+# ---------------------------------------------------------------
+
+# Nekomprimovaný model (27 MB). Web používá car-opt.glb (4,3 MB),
+# vyrobený příkazem:
+#   npx @gltf-transform/cli optimize "the car.glb" car-opt.glb \
+#     --compress draco --texture-compress webp
+kia-sportage-gt-line-2023/source/the car.glb
+
+# Textury modelu (12 MB) — GLB je má zabalené v sobě
+kia-sportage-gt-line-2023/textures/
+
+# Předlohy k assets/ — web načítá zmenšené verze z assets/
+garaz.png
+hero.png
+logo.jpg
+
+# Původní návrh hero sekce, nahrazený index.html
+Hero.dc.html

@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The import map has to be in the real <head>: a map appended later is ignored
+     once any module specifier has resolved. Same reason the module tag lives here. -->
+<!-- three.js je self-hostovaný (vendor/three, verze 0.160.0). CDN odpadá:
+     hero nezávisí na cizí doméně a nejde ji podstrčit. -->
+<script type="importmap">
+{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}
+</script>
+<script type="module" src="./hero-car.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>LuNi DETAILING — auto detailing Rudíkov, okres Třebíč</title>
+<meta name="description" content="Profesionální auto detailing na Vysočině. Čištění interiéru od 990 Kč, leštění laku, keramická ochrana až na 3 roky. Studio v Rudíkově u Třebíče, jezdíme po celé ČR." />
+<meta name="theme-color" content="#0A0A0B" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="LuNi DETAILING — dokonalá čistota, luxusní péče o váš vůz" />
+<meta property="og:description" content="Interiér, lak i dlouhodobá ochrana. Detailingové studio v Rudíkově na Vysočině." />
+<meta property="og:image" content="https://lunidetailing.cz/assets/studio.jpg" />
+<meta property="og:url" content="https://lunidetailing.cz/" />
+<meta property="og:locale" content="cs_CZ" />
+<link rel="canonical" href="https://lunidetailing.cz/" />
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoDetailing",
+  "name": "LuNi DETAILING",
+  "description": "Profesionální detailing vozidel — čištění interiéru, péče o exteriér, leštění laku a keramická ochrana.",
+  "image": "https://lunidetailing.cz/assets/studio.jpg",
+  "url": "https://lunidetailing.cz/",
+  "telephone": "+420728420689",
+  "email": "lunidetailing@seznam.cz",
+  "areaServed": "CZ",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rudíkov",
+    "addressRegion": "Kraj Vysočina",
+    "addressCountry": "CZ"
+  },
+  "sameAs": [
+    "https://www.facebook.com/share/1JDVrinn9F/",
+    "https://www.instagram.com/luni.detailing"
+  ],
+  "priceRange": "990–18990 Kč"
+}
+</script>
+<style>
+  :root {
+    --ink:#0A0A0B; --ink2:#0F0F11; --panel:#151517;
+    --line:rgba(237,233,226,.11); --line2:rgba(237,233,226,.06);
+    --paper:#EDE9E2; --mute:#9A9791;
+    --gold:#C9A24A; --gold-lt:#F2E0AE; --gold-dp:#7A5A24;
+    --wrap:1320px; --pad:clamp(18px,5vw,64px);
+    --sect:clamp(74px,10vh,130px);
+    --ease:cubic-bezier(.2,.7,.2,1);
+  }
+  *,*::before,*::after { box-sizing:border-box; }
+  html { scroll-behavior:smooth; scroll-padding-top:88px; }
+  html,body { margin:0; padding:0; background:var(--ink); }
+  body { color:var(--paper); font-family:Manrope,system-ui,sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  img { max-width:100%; display:block; }
+  a { color:inherit; text-decoration:none; }
+  ::selection { background:var(--gold); color:#0A0A0B; }
+  :focus-visible { outline:2px solid var(--gold); outline-offset:3px; border-radius:2px; }
+
+  /* ---------- type ---------- */
+  /* Verzálky s Antoniem: změřeno v prohlížeči (font-size 100 px, weight 700) —
+     verzálka R sahá 86 px nad účaří, Í s čárkou 113 px, čárka klesá 16,5 px pod.
+     Diakritika tedy potřebuje line-height ≥ 1,13, a nad interpunkcí z řádku výš
+     ≥ 1,30. Pod tím háčky a čárky visí odtržené v mezeře nad písmeny. */
+  h1,h2,h3 { margin:0; font-family:Antonio,'Arial Narrow',system-ui,sans-serif; font-weight:700; text-transform:uppercase; }
+  h1 { font-size:clamp(38px,6.6vw,96px); line-height:1.16; letter-spacing:.004em; overflow-wrap:break-word; }
+  h2 { font-size:clamp(31px,4.6vw,62px); line-height:1.26; letter-spacing:.01em; }
+  h3 { font-size:19px; line-height:1.2; letter-spacing:.03em; font-weight:600; color:var(--paper); }
+  p { margin:0; }
+  .lead { font-size:clamp(16px,1.35vw,18.5px); line-height:1.72; color:var(--mute); text-wrap:pretty; }
+  /* Čísla a ceny: Antonio (stejná automobilová kondenzovaná typografie jako nadpisy),
+     ne monospace — cena není katalogové číslo dílu. */
+  .fig { font-family:Antonio,'Arial Narrow',system-ui,sans-serif; font-weight:600; font-variant-numeric:tabular-nums; }
+  /* Štítky a popisky: Manrope s prostrkáním. */
+  .lbl { font-weight:600; letter-spacing:.18em; text-transform:uppercase; }
+  .eyebrow { display:flex; align-items:center; gap:11px; margin:0 0 20px;
+    font-size:11px; font-weight:600; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--gold); }
+  .eyebrow::before { content:''; width:22px; height:1px; background:currentColor; flex:none; }
+
+  /* ---------- signature: gold read under a detailer's inspection lamp ---------- */
+  .gold { color:var(--gold-lt); }
+  @supports (-webkit-background-clip:text) or (background-clip:text) {
+    .gold {
+      color:transparent; -webkit-text-fill-color:transparent;
+      background-image:linear-gradient(97deg, #A8823A 0%, #E4C886 26%, #F7EAC4 44%, #D6B76C 62%, #A8823A 100%);
+      -webkit-background-clip:text; background-clip:text;
+    }
+    /* Only the H1 gets the moving light bar — one signature, not a page full of them. */
+    .hero .gold {
+      background-image:
+        linear-gradient(100deg, rgba(255,252,244,0) 40%, rgba(255,252,244,.92) 47%, rgba(255,252,244,0) 55%),
+        linear-gradient(97deg, #7E5D24 0%, #C9A24A 19%, #F7EAC4 36%, #DCBE76 50%, #97742E 74%, #C9A24A 100%);
+      background-size:280% 100%, 100% 100%;
+      background-position:170% 0, 0 0;
+      background-repeat:no-repeat;
+      animation:lampSweep 9s 1.1s ease-in-out infinite;
+    }
+  }
+  @keyframes lampSweep {
+    0% { background-position:170% 0, 0 0; }
+    46%,100% { background-position:-70% 0, 0 0; }
+  }
+
+  /* ---------- shell ---------- */
+  .wrap { max-width:var(--wrap); margin:0 auto; padding-inline:var(--pad); }
+  section { padding-block:var(--sect); }
+  .rule { height:1px; background:linear-gradient(90deg,transparent,var(--line),transparent); }
+  .head { max-width:62ch; }
+  .head h2 { margin-bottom:18px; }
+
+  [data-reveal] { opacity:0; transform:translateY(20px); transition:opacity .75s var(--ease), transform .75s var(--ease); }
+  [data-reveal][data-seen="1"] { opacity:1; transform:none; }
+
+  /* ---------- nav ---------- */
+  .nav { position:fixed; inset:0 0 auto 0; z-index:60; display:flex; align-items:center; gap:24px;
+    padding:14px var(--pad); border-bottom:1px solid transparent; transition:background .3s var(--ease), border-color .3s, backdrop-filter .3s; }
+  .brand { display:flex; align-items:center; gap:11px; margin-right:auto; }
+  .brand img { width:34px; height:34px; border-radius:3px; }
+  .brand b { font-family:Antonio,sans-serif; font-weight:700; font-size:16px; letter-spacing:.17em; text-transform:uppercase; }
+  .brand b span { color:var(--gold); }
+  .nav nav { display:flex; gap:clamp(16px,2.2vw,32px); font-size:13px; letter-spacing:.04em; color:rgba(237,233,226,.68); }
+  .nav nav a { position:relative; padding-block:4px; transition:color .2s; }
+  .nav nav a::after { content:''; position:absolute; left:0; right:100%; bottom:0; height:1px; background:var(--gold); transition:right .3s var(--ease); }
+  .nav nav a:hover { color:var(--paper); }
+  .nav nav a:hover::after { right:0; }
+  .tel { font-size:13.5px; font-weight:600; letter-spacing:.03em; font-variant-numeric:tabular-nums; color:rgba(237,233,226,.8); }
+  .tel:hover { color:var(--gold-lt); }
+
+  /* ---------- buttons ---------- */
+  .btn { display:inline-flex; align-items:center; gap:9px; padding:14px 24px; border-radius:3px;
+    font-weight:600; font-size:14px; letter-spacing:.02em; transition:transform .2s var(--ease), box-shadow .25s, background .25s, border-color .25s; }
+  .btn-gold { background:linear-gradient(135deg,#E0C377,#C9A24A 55%,#A8823A); color:#12100B;
+    box-shadow:0 1px 0 rgba(255,244,214,.45) inset, 0 8px 26px -14px rgba(201,162,74,.9); }
+  .btn-gold:hover { transform:translateY(-2px); box-shadow:0 1px 0 rgba(255,244,214,.6) inset, 0 14px 34px -14px rgba(201,162,74,1); }
+  .btn-ghost { border:1px solid var(--line); color:var(--paper); }
+  .btn-ghost:hover { border-color:rgba(201,162,74,.65); color:var(--gold-lt); }
+  .btn-sm { padding:10px 17px; font-size:13px; }
+
+  /* ---------- hero ---------- */
+  /* Mobile order is DOM order — headline, then the car, then the buttons — so the
+     model is on screen without a scroll. Desktop stacks head+actions beside it. */
+  .hero { display:grid; gap:clamp(26px,4vw,44px); align-items:center;
+    grid-template-columns:1fr; padding-block:clamp(100px,14vh,164px) clamp(40px,7vh,80px); }
+  @media (min-width:1000px) {
+    .hero { grid-template-columns:minmax(0,42fr) minmax(0,58fr); column-gap:clamp(32px,4vw,64px); row-gap:0; }
+    .hero-head { grid-area:1/1; }
+    .hero-act { grid-area:2/1; }
+    .hero-stage { grid-area:1/2/span 2/3; }
+  }
+  .hero h1 { margin:0 0 24px; text-wrap:balance; }
+  .hero .lead { max-width:46ch; }
+  .cta { display:flex; flex-wrap:wrap; gap:12px; margin-top:32px; }
+  .facts { display:flex; flex-wrap:wrap; gap:0 34px; margin-top:40px; padding-top:24px; border-top:1px solid var(--line); }
+  .facts div { padding-block:6px; }
+  .facts dt { font-family:Antonio,'Arial Narrow',system-ui,sans-serif; font-weight:600;
+    font-variant-numeric:tabular-nums; font-size:30px; line-height:1; letter-spacing:.01em; color:var(--gold-lt); }
+  .facts dd { margin:7px 0 0; font-size:11.5px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; color:var(--mute); }
+  .stage { position:relative; height:clamp(330px,62vh,640px); border:1px solid var(--line);
+    border-radius:5px; overflow:hidden; background:#0C0C0E; }
+  /* Jediný text, který vysvětluje, že s modelem jde hýbat — musí být čitelný,
+     ne dekorace. Kontrast ≥ 4,5:1. */
+  .stage-note { display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:14px;
+    font-size:12px; font-weight:600; letter-spacing:.13em;
+    text-transform:uppercase; color:rgba(237,233,226,.78); }
+  .stage-note span { display:flex; align-items:center; gap:8px; }
+  .stage-note svg { flex:none; stroke:var(--gold); }
+
+  /* ---------- service cards ---------- */
+  .cards { display:grid; gap:14px; grid-template-columns:1fr; margin-top:46px; }
+  @media (min-width:660px) { .cards { grid-template-columns:repeat(2,1fr); } }
+  @media (min-width:1080px) { .cards { grid-template-columns:repeat(4,1fr); } }
+  .card { display:flex; flex-direction:column; padding:26px 24px 24px; border:1px solid var(--line);
+    border-radius:4px; background:linear-gradient(180deg,var(--panel),var(--ink2)); transition:border-color .3s, transform .3s var(--ease); }
+  .card:hover { border-color:rgba(201,162,74,.4); transform:translateY(-3px); }
+  .card h3 { margin-bottom:6px; }
+  .card .from { font-size:13.5px; line-height:1.5; color:var(--gold); margin-bottom:16px; font-variant-numeric:tabular-nums; }
+  /* Cena se nesmí zlomit uprostřed („Premium od / 3 190 Kč“, „2- / krokové“). */
+  .card .from b { font-weight:500; white-space:nowrap; }
+  .card ul { margin:0; padding:0; list-style:none; display:grid; gap:9px; font-size:14px; line-height:1.5; color:var(--mute); }
+  .card li { display:flex; gap:10px; }
+  .card li::before { content:''; margin-top:8px; width:5px; height:5px; flex:none; background:var(--gold); transform:rotate(45deg); opacity:.8; }
+
+  /* ---------- packages: an escalating ladder, so the numbers mean something ---------- */
+  .packs { display:grid; gap:14px; grid-template-columns:1fr; margin-top:46px; }
+  @media (min-width:840px) { .packs { grid-template-columns:repeat(3,1fr); } }
+  .pack { position:relative; padding:30px 26px; border:1px solid var(--line); border-radius:4px; background:var(--ink2); }
+  .pack--top { border-color:rgba(201,162,74,.45); background:linear-gradient(170deg,rgba(201,162,74,.09),var(--ink2) 46%); }
+  .pack .step { font-size:11px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); }
+  .pack h3 { margin:12px 0 14px; font-size:26px; }
+  .pack .price { font-family:Antonio,'Arial Narrow',system-ui,sans-serif; font-weight:600;
+    font-variant-numeric:tabular-nums; font-size:40px; line-height:1; letter-spacing:.01em; color:var(--gold-lt); }
+  .pack ul { margin:20px 0 0; padding:0; list-style:none; display:grid; gap:9px; font-size:14px; color:var(--mute); }
+  .pack li { display:flex; gap:10px; }
+  .pack li::before { content:''; margin-top:8px; width:5px; height:5px; flex:none; background:var(--gold); transform:rotate(45deg); opacity:.8; }
+
+  /* ---------- price ledger ---------- */
+  .ledger { display:grid; gap:clamp(28px,4vw,56px); grid-template-columns:1fr; margin-top:46px; }
+  @media (min-width:820px) { .ledger { grid-template-columns:repeat(2,1fr); } }
+  .lg h3 { padding-bottom:12px; margin-bottom:4px; border-bottom:1px solid var(--gold-dp); font-size:16px; letter-spacing:.14em; color:var(--gold); }
+  .row { display:flex; align-items:baseline; gap:14px; padding:12px 0; border-bottom:1px solid var(--line2); font-size:14.5px; }
+  .row span { flex:1; color:rgba(237,233,226,.86); }
+  .row small { display:block; margin-top:3px; font-size:12.5px; color:var(--mute); }
+  .row b { font-family:Antonio,'Arial Narrow',system-ui,sans-serif; font-weight:600;
+    font-variant-numeric:tabular-nums; font-size:20px; letter-spacing:.01em; color:var(--gold-lt); white-space:nowrap; }
+  .note { margin-top:26px; font-size:13.5px; line-height:1.65; color:var(--mute); }
+
+  /* ---------- values ---------- */
+  .values { display:grid; gap:1px; margin-top:46px; background:var(--line); border:1px solid var(--line);
+    border-radius:4px; overflow:hidden; grid-template-columns:1fr; }
+  @media (min-width:620px) { .values { grid-template-columns:repeat(2,1fr); } }
+  @media (min-width:1000px) { .values { grid-template-columns:repeat(4,1fr); } }
+  .values > div { background:var(--ink2); padding:28px 24px; }
+  .values h3 { margin-bottom:10px; font-size:17px; }
+  .values p { font-size:14px; line-height:1.6; color:var(--mute); }
+
+  /* ---------- about ---------- */
+  .about { display:grid; gap:clamp(28px,4vw,56px); grid-template-columns:1fr; align-items:start; }
+  @media (min-width:940px) { .about { grid-template-columns:minmax(0,1fr) minmax(0,1fr); } }
+  .about .body { display:grid; gap:18px; }
+  .shot { border:1px solid var(--line); border-radius:4px; overflow:hidden; background:var(--ink2); }
+  .shot img { width:100%; height:100%; object-fit:cover; aspect-ratio:4/3; }
+  .motto { margin-top:8px; padding:22px 24px; border-left:2px solid var(--gold);
+    background:linear-gradient(90deg,rgba(201,162,74,.08),transparent 70%);
+    font-family:Antonio,sans-serif; font-size:clamp(22px,2.6vw,32px); line-height:1.1;
+    text-transform:uppercase; letter-spacing:.02em; }
+
+  /* ---------- gallery ---------- */
+  .shots { display:grid; gap:10px; grid-template-columns:repeat(2,1fr); margin-top:46px; }
+  @media (min-width:760px) { .shots { grid-template-columns:repeat(4,1fr); } }
+  .shots figure { position:relative; margin:0; border:1px solid var(--line2); border-radius:3px; overflow:hidden; background:var(--ink2); }
+  .shots img { width:100%; height:100%; object-fit:cover; aspect-ratio:4/3; transition:transform .6s var(--ease), filter .4s; }
+  .shots figure:hover img { transform:scale(1.035); }
+  .shots .wide { grid-column:span 2; }
+  .shots .wide img { aspect-ratio:3/2; }
+
+  /* ---------- contact ---------- */
+  .contact { display:grid; gap:clamp(28px,4vw,56px); grid-template-columns:1fr; align-items:start; }
+  @media (min-width:900px) { .contact { grid-template-columns:minmax(0,1fr) minmax(0,1fr); } }
+  .lines { display:grid; gap:2px; margin-top:34px; }
+  .lines a, .lines div { display:flex; align-items:center; gap:14px; padding:16px 0; border-bottom:1px solid var(--line2); }
+  .lines .k { flex:none; display:flex; align-items:center; gap:11px; width:132px; font-size:11px; font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--mute); }
+  .lines .v { font-size:17px; color:var(--paper); transition:color .2s; }
+  .lines a:hover .v { color:var(--gold-lt); }
+  .lines a:hover .ico { stroke:var(--gold); }
+
+  /* Ikony kanálů: jednotná čárová sada, 1,5 px tah, bez výplně — kreslené na míru,
+     aby nepřibyla závislost na icon fontu. */
+  .ico { flex:none; width:18px; height:18px; stroke:currentColor; stroke-width:1.5;
+    stroke-linecap:square; stroke-linejoin:miter; fill:none; transition:stroke .2s; }
+  .social { display:flex; gap:10px; margin-top:26px; }
+  .social a { display:grid; place-items:center; width:44px; height:44px; border:1px solid var(--line);
+    border-radius:3px; color:rgba(237,233,226,.72); transition:border-color .25s, color .25s; }
+  .social a:hover { border-color:rgba(201,162,74,.6); color:var(--gold-lt); }
+
+  footer { padding:40px var(--pad) 52px; border-top:1px solid var(--line); }
+  .foot { max-width:var(--wrap); margin:0 auto; display:flex; flex-wrap:wrap; gap:14px 30px; align-items:center;
+    font-size:12.5px; color:var(--mute); }
+  .foot .sep { margin-left:auto; }
+
+  /* ---------- mobilní menu ----------
+     Nativní <details> — rozbalení řeší prohlížeč, žádný JS na otevírání.
+     Skript zavírá jen po kliknutí na odkaz. */
+  .menu { display:none; }
+  .menu > summary { list-style:none; display:grid; place-items:center; width:44px; height:44px;
+    margin-right:-8px; border:1px solid var(--line); border-radius:3px; cursor:pointer; }
+  .menu > summary::-webkit-details-marker { display:none; }
+  .menu > summary span { display:block; width:19px; height:1.5px; background:var(--paper);
+    box-shadow:0 -6px 0 var(--paper), 0 6px 0 var(--paper); transition:background .2s, box-shadow .2s; }
+  .menu[open] > summary { border-color:rgba(201,162,74,.6); }
+  .menu[open] > summary span { background:transparent; box-shadow:0 -6px 0 var(--gold), 0 6px 0 var(--gold); }
+  .menu .sheet { position:fixed; left:0; right:0; top:72px; padding:8px var(--pad) 22px;
+    background:var(--ink2); border-bottom:1px solid var(--line); display:grid; gap:2px; }
+  .menu .sheet a { padding:15px 0; border-bottom:1px solid var(--line2); font-size:16px; }
+  .menu .sheet .tel-row { display:flex; align-items:center; gap:11px; margin-top:14px;
+    font-size:16px; font-weight:600; color:var(--gold-lt); font-variant-numeric:tabular-nums; }
+
+  @media (max-width:900px) {
+    .nav nav, .tel { display:none; }
+    .menu { display:block; }
+    .nav { gap:12px; }
+  }
+  @media (max-width:420px) { .nav .btn-gold span { display:none; } }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior:auto; }
+    *,*::before,*::after { animation:none !important; transition:none !important; }
+    [data-reveal] { opacity:1; transform:none; }
+  }
+</style>
+</helmet>
+
+<div>
+
+  <header class="nav" ref="{{ navRef }}">
+    <a class="brand" href="#uvod" aria-label="LuNi Detailing, na začátek stránky">
+      <img src="assets/mark.svg" alt="" width="34" height="34" />
+      <b>Lu<span>Ni</span></b>
+    </a>
+    <nav aria-label="Hlavní">
+      <a href="#sluzby">Služby</a>
+      <a href="#cenik">Ceník</a>
+      <a href="#realizace">Realizace</a>
+      <a href="#o-nas">O nás</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="tel" href="tel:+420728420689">+420 728 420 689</a>
+    <a class="btn btn-gold btn-sm" href="tel:+420728420689">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" style="width:15px;height:15px;stroke-width:1.7">
+        <path d="M5 3h4l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/>
+      </svg><span>Domluvit termín</span>
+    </a>
+    <details class="menu">
+      <summary aria-label="Otevřít menu"><span></span></summary>
+      <nav class="sheet" aria-label="Mobilní">
+        <a href="#sluzby">Služby</a>
+        <a href="#cenik">Ceník</a>
+        <a href="#realizace">Realizace</a>
+        <a href="#o-nas">O nás</a>
+        <a href="#kontakt">Kontakt</a>
+        <a class="tel-row" href="tel:+420728420689">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 3h4l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/>
+          </svg>+420 728 420 689
+        </a>
+      </nav>
+    </details>
+  </header>
+
+  <main id="uvod">
+
+    <!-- ============ HERO ============ -->
+    <div class="wrap hero">
+      <div class="hero-head">
+        <p class="eyebrow">Rudíkov · okres Třebíč · celá ČR</p>
+        <h1><span class="gold">Detailing,<br />kde detail<br />je standard</span></h1>
+        <p class="lead">Patnáct let jsme se pohybovali kolem aut — kupovali je, prodávali a viděli, co s vozem udělá péče a co zanedbání. Dnes to děláme naplno ve vlastním studiu na Vysočině: interiér, lak i ochrana, která vydrží roky.</p>
+      </div>
+
+      <div class="hero-stage">
+        <div class="stage">
+          <x-import component-from-global-scope="hero-car"
+                    src="./kia-sportage-gt-line-2023/source/car-opt.glb"
+                    accent="#C9A24A" spin="44" split="74" hint-size="100%,100%"></x-import>
+        </div>
+        <p class="stage-note">
+          <span>
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" style="width:15px;height:15px">
+              <path d="M4 12h16M7 9l-3 3 3 3M17 9l3 3-3 3"/>
+            </svg>Tažením do stran otočíte vůz
+          </span>
+          <span>
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" style="width:15px;height:15px">
+              <path d="M12 4v16M9 7l3-3 3 3M9 17l3 3 3-3"/>
+            </svg>Tažením nahoru a dolů vůz umyjete
+          </span>
+        </p>
+      </div>
+
+      <div class="hero-act">
+        <div class="cta">
+          <a class="btn btn-gold" href="tel:+420728420689">Zavolat 728 420 689</a>
+          <a class="btn btn-ghost" href="#cenik">Prohlédnout ceník</a>
+        </div>
+        <dl class="facts">
+          <div><dt>15+ let</dt><dd>Praxe kolem aut</dd></div>
+          <div><dt>od 990 Kč</dt><dd>Čištění interiéru</dd></div>
+          <div><dt>3 roky</dt><dd>Keramická ochrana</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <!-- ============ SLUŽBY ============ -->
+    <section id="sluzby">
+      <div class="wrap">
+        <div class="head" data-reveal>
+          <p class="eyebrow">Co děláme</p>
+          <h2>Služby</h2>
+          <p class="lead">Čtyři oblasti, které se dají objednat samostatně nebo poskládat do balíčku. U každé platí to samé — vůz odjíždí v lepším stavu, než v jakém přijel.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card" data-reveal>
+            <h3>Interiér</h3>
+            <p class="from"><b>Klasik od 990 Kč</b> · <b>Premium od 3&nbsp;190 Kč</b></p>
+            <ul>
+              <li>Kompletní suché vysání</li>
+              <li>Očištění a oživení plastů</li>
+              <li>Tepování textilních sedaček a koberců</li>
+              <li>Čištění a impregnace kůže</li>
+              <li>Parní čištění, větrací otvory, mezidveřní prostory</li>
+            </ul>
+          </article>
+
+          <article class="card" data-reveal>
+            <h3>Exteriér</h3>
+            <p class="from"><b>Klasik 990 Kč</b> · <b>Premium 1&nbsp;990 Kč</b></p>
+            <ul>
+              <li>Ruční mytí vozu a čištění kol</li>
+              <li>Mytí podběhů a sušení vozidla</li>
+              <li>Dekontaminace laku</li>
+              <li>Leštění skel z vnější strany</li>
+              <li>Impregnace exteriérových plastů</li>
+            </ul>
+          </article>
+
+          <article class="card" data-reveal>
+            <h3>Leštění laku</h3>
+            <p class="from"><b>1-krokové od 5&nbsp;990 Kč</b> · <b>2-krokové od 9&nbsp;990 Kč</b></p>
+            <ul>
+              <li>Odstranění škrábanců a hologramů</li>
+              <li>Srovnání lesku po celé ploše</li>
+              <li>Dvoukrokový postup pro zanedbaný lak</li>
+              <li>Základ před keramickou ochranou</li>
+            </ul>
+          </article>
+
+          <article class="card" data-reveal>
+            <h3>Keramická ochrana</h3>
+            <p class="from"><b>Roční 4&nbsp;990 Kč</b> · <b>3letá 6&nbsp;990 Kč</b></p>
+            <ul>
+              <li>Dlouhodobá ochrana laku</li>
+              <li>Snadnější mytí, méně ulpívající špíny</li>
+              <li>Příprava laku +1&nbsp;500 Kč</li>
+              <li>Alternativa: tuhý vosk od 490 Kč</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <!-- ============ BALÍČKY ============ -->
+    <section id="balicky">
+      <div class="wrap">
+        <div class="head" data-reveal>
+          <p class="eyebrow">Tři stupně péče</p>
+          <h2>Balíčky</h2>
+          <p class="lead">Od rychlé přípravy vozu na prodej až po kompletní obnovu s tříletou keramikou. Každý vyšší stupeň obsahuje všechno z toho nižšího.</p>
+        </div>
+
+        <div class="packs">
+          <article class="pack" data-reveal>
+            <p class="step">Stupeň 1</p>
+            <h3>Auto na prodej</h3>
+            <p class="price">7&nbsp;490 Kč</p>
+            <ul>
+              <li>Mokré čištění interiéru</li>
+              <li>Exteriér standard</li>
+              <li>1-krokové leštění</li>
+              <li>Dezinfekce ozonem</li>
+            </ul>
+          </article>
+
+          <article class="pack" data-reveal>
+            <p class="step">Stupeň 2</p>
+            <h3>Klasik</h3>
+            <p class="price">14&nbsp;990 Kč</p>
+            <ul>
+              <li>Mokré čištění interiéru</li>
+              <li>Exteriér standard</li>
+              <li>1-krokové leštění</li>
+              <li>Roční keramická ochrana</li>
+              <li>Dezinfekce ozonem</li>
+            </ul>
+          </article>
+
+          <article class="pack pack--top" data-reveal>
+            <p class="step">Stupeň 3</p>
+            <h3>Premium</h3>
+            <p class="price">18&nbsp;990 Kč</p>
+            <ul>
+              <li>Mokré čištění interiéru</li>
+              <li>Exteriér premium</li>
+              <li>2-krokové leštění</li>
+              <li>3letá keramická ochrana</li>
+              <li>Dezinfekce ozonem</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <!-- ============ CENÍK ============ -->
+    <section id="cenik">
+      <div class="wrap">
+        <div class="head" data-reveal>
+          <p class="eyebrow">Kompletní přehled</p>
+          <h2>Ceník</h2>
+          <p class="lead">Kompletní ceník služeb. U položek označených „od“ a u cenových rozpětí záleží konečná částka na velikosti a stavu vozu — potvrdíme ji při domluvě termínu.</p>
+        </div>
+
+        <div class="ledger" data-reveal>
+          <div>
+            <div class="lg">
+              <h3>Interiér</h3>
+              <div class="row"><span>Klasik<small>Suché čištění, oživení plastů, leštění oken, provonění</small></span><b>od 990 Kč</b></div>
+              <div class="row"><span>Premium<small>Mokré čištění, tepování, kůže, parní čištění</small></span><b>od 3&nbsp;190 Kč</b></div>
+            </div>
+
+            <div class="lg" style="margin-top:38px">
+              <h3>Exteriér</h3>
+              <div class="row"><span>Klasik<small>Ruční mytí, kola, podběhy, sušení</small></span><b>990 Kč</b></div>
+              <div class="row"><span>Premium<small>Dekontaminace laku, skla, impregnace plastů</small></span><b>1&nbsp;990 Kč</b></div>
+            </div>
+
+            <div class="lg" style="margin-top:38px">
+              <h3>Leštění</h3>
+              <div class="row"><span>1-krokové</span><b>5&nbsp;990 – 7&nbsp;490 Kč</b></div>
+              <div class="row"><span>2-krokové</span><b>9&nbsp;990 – 11&nbsp;490 Kč</b></div>
+            </div>
+
+            <div class="lg" style="margin-top:38px">
+              <h3>Keramická ochrana</h3>
+              <div class="row"><span>Roční</span><b>4&nbsp;990 Kč</b></div>
+              <div class="row"><span>3letá</span><b>6&nbsp;990 Kč</b></div>
+              <div class="row"><span>Příprava laku<small>Nutná k oběma variantám</small></span><b>+1&nbsp;500 Kč</b></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="lg">
+              <h3>Balíčky</h3>
+              <div class="row"><span>Auto na prodej</span><b>7&nbsp;490 Kč</b></div>
+              <div class="row"><span>Klasik</span><b>14&nbsp;990 Kč</b></div>
+              <div class="row"><span>Premium</span><b>18&nbsp;990 Kč</b></div>
+            </div>
+
+            <div class="lg" style="margin-top:38px">
+              <h3>Doplňkové služby</h3>
+              <div class="row"><span>Renovace světlometů</span><b>990 Kč</b></div>
+              <div class="row"><span>Dezinfekce ozonem</span><b>300 Kč</b></div>
+              <div class="row"><span>Tekuté stěrače — čelní okno</span><b>990 Kč</b></div>
+              <div class="row"><span>Tekuté stěrače — komplet</span><b>1&nbsp;990 Kč</b></div>
+              <div class="row"><span>Tuhý vosk — bez přípravy</span><b>990 – 1&nbsp;490 Kč</b></div>
+              <div class="row"><span>Tuhý vosk — s přípravou</span><b>2&nbsp;990 – 3&nbsp;490 Kč</b></div>
+              <div class="row"><span>Tuhý vosk — k leštění</span><b>490 – 990 Kč</b></div>
+            </div>
+
+            <div class="lg" style="margin-top:38px">
+              <h3>Příplatek</h3>
+              <div class="row"><span>Dodávky</span><b>+20 %</b></div>
+            </div>
+
+            <p class="note">Nevíte, co váš vůz potřebuje? Zavolejte na <a href="tel:+420728420689" style="color:var(--gold-lt)">728 420 689</a> nebo napište na <a href="mailto:lunidetailing@seznam.cz" style="color:var(--gold-lt)">lunidetailing@seznam.cz</a> — projdeme stav vozu a doporučíme rozsah.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <!-- ============ REALIZACE ============ -->
+    <section id="realizace">
+      <div class="wrap">
+        <div class="head" data-reveal>
+          <p class="eyebrow">Ukázka naší práce</p>
+          <h2>Realizace</h2>
+          <p class="lead">Fotografie před a po z našich zakázek. Nejvíc je rozdíl vidět na sedačkách, v zavazadlovém prostoru a na laku v odrazu světla.</p>
+        </div>
+
+        <div class="shots" data-reveal>
+          <figure class="wide"><img src="web-export/obrazky/galerie/04.png" alt="Před a po: vyčištěný interiér pick-upu — přední sedadla, koberce a středový tunel" loading="lazy" width="844" height="561" /></figure>
+          <figure class="wide"><img src="web-export/obrazky/galerie/07.png" alt="Před a po: tepovaná palubní deska, volant a dveřní výplně BMW" loading="lazy" width="844" height="562" /></figure>
+          <figure><img src="web-export/obrazky/galerie/02.jpg" alt="Umyté a naleštěné šedé BMW X5 po kompletním exteriérovém detailingu" loading="lazy" width="844" height="633" /></figure>
+          <figure><img src="web-export/obrazky/galerie/01.jpg" alt="Béžový kožený interiér BMW X5 po čištění a impregnaci kůže" loading="lazy" width="844" height="633" /></figure>
+          <figure><img src="web-export/obrazky/galerie/13.jpg" alt="Černé BMW X6 zezadu v detailingovém studiu" loading="lazy" width="844" height="633" /></figure>
+          <figure><img src="web-export/obrazky/galerie/09.jpg" alt="Tmavě modré Volvo V40 po ručním mytí a ošetření laku" loading="lazy" width="844" height="633" /></figure>
+          <figure class="wide"><img src="web-export/obrazky/galerie/05.png" alt="Před a po: tepování zadních textilních sedaček" loading="lazy" width="844" height="633" /></figure>
+          <figure class="wide"><img src="web-export/obrazky/galerie/08.png" alt="Před a po: leštění laku na blatníku černého SUV, odstranění škrábanců" loading="lazy" width="844" height="633" /></figure>
+          <figure><img src="web-export/obrazky/galerie/03.jpg" alt="Černé BMW X6 po exteriérovém detailingu ve studiu" loading="lazy" width="844" height="708" /></figure>
+          <figure><img src="web-export/obrazky/galerie/10.jpg" alt="Palubní deska a kožená sedadla BMW X5 po detailingu interiéru" loading="lazy" width="844" height="633" /></figure>
+          <figure class="wide"><img src="web-export/obrazky/galerie/12.png" alt="Před a po: vyčištěný zavazadlový prostor" loading="lazy" width="844" height="562" /></figure>
+          <figure class="wide"><img src="web-export/obrazky/galerie/06.png" alt="Před a po: zadní sedadla pick-upu s koženými prvky po čištění" loading="lazy" width="844" height="561" /></figure>
+          <!-- „wide“ i na poslední fotce: 6 širokých + 7 běžných = 19 sloupcových
+               jednotek, poslední řádek by měl díru. S touto 20 jednotek = 5 plných řádků. -->
+          <figure class="wide"><img src="web-export/obrazky/galerie/11.png" alt="Vyčištěný zavazadlový prostor s béžovým čalouněním" loading="lazy" width="844" height="619" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <!-- ============ O NÁS ============ -->
+    <section id="o-nas">
+      <div class="wrap about">
+        <div class="body" data-reveal>
+          <p class="eyebrow">O nás</p>
+          <h2>Auto je vizitka<br />svého majitele</h2>
+          <p class="lead">Před více než patnácti lety jsme začínali jen s pár penězi, ale s velkým odhodláním a vášní pro auta. Pohybovali jsme se ve světě nákupu a prodeje vozidel, kde jsme získávali zkušenosti, budovali kontakty a učili se, co zákazníci od kvalitní péče o vůz opravdu očekávají.</p>
+          <p class="lead">Právě dlouholetá praxe a cit pro detail nás dovedly k založení LuNi DETAILING. Spojujeme zkušenosti z automobilového prostředí s profesionální péčí o vozy — protože auto není jen dopravní prostředek, ale často i radost, vizitka a srdcová záležitost.</p>
+          <p class="lead">Používáme kvalitní profesionální přípravky, moderní technologie a především pečlivý přístup. Naším cílem je, aby každý zákazník odjížděl s pocitem, že jeho vůz vypadá lépe než kdy dříve.</p>
+          <p class="motto"><span class="gold">Dokonalá čistota.<br />Luxusní péče o váš vůz.</span></p>
+        </div>
+        <div class="shot" data-reveal>
+          <img src="assets/studio.jpg" alt="Interiér detailingového studia LuNi v Rudíkově" loading="lazy" width="1800" height="1348" />
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="values" data-reveal>
+          <div>
+            <h3>Preciznost</h3>
+            <p>Detail rozhoduje. Každému vozu věnujeme maximální pozornost.</p>
+          </div>
+          <div>
+            <h3>Kvalita</h3>
+            <p>Používáme ověřené profesionální produkty a moderní postupy.</p>
+          </div>
+          <div>
+            <h3>Spolehlivost</h3>
+            <p>Dodržujeme domluvené termíny a vždy jednáme férově.</p>
+          </div>
+          <div>
+            <h3>Individuální přístup</h3>
+            <p>Každé auto i zákazník je jiný — péči přizpůsobujeme konkrétním potřebám.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <!-- ============ KONTAKT ============ -->
+    <section id="kontakt">
+      <div class="wrap contact">
+        <div data-reveal>
+          <p class="eyebrow">Kde nás najdete</p>
+          <h2>Rudíkov,<br />okres Třebíč</h2>
+          <p class="lead" style="margin-top:20px">Působíme z Vysočiny a věnujeme se klientům z celé České republiky. Termín domluvíme telefonicky, přes WhatsApp nebo e-mailem — řekneme si, co vůz potřebuje, a rovnou potvrdíme, kdy ho můžete přivézt.</p>
+          <div class="cta">
+            <a class="btn btn-gold" href="tel:+420728420689">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px;stroke-width:1.7"><path d="M5 3h4l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+              Zavolat 728 420 689
+            </a>
+            <a class="btn btn-ghost" href="https://wa.me/420733248967" target="_blank" rel="noopener">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px"><path d="M3.5 20.5 5 16a8.5 8.5 0 1 1 3.5 3.5l-5 1z"/><path d="M9 9c0 3 3 6 6 6l1.5-1.5-2-1.5-1 1c-1-.4-2.6-2-3-3l1-1L10 7 8.5 8.5"/></svg>
+              Napsat na WhatsApp
+            </a>
+          </div>
+          <div class="social">
+            <a href="https://www.facebook.com/share/1JDVrinn9F/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 21v-8H17l.5-3h-3V8.2c0-.9.3-1.4 1.5-1.4H18V4.1A20 20 0 0 0 15.6 4C13.2 4 11.5 5.4 11.5 8v2H9v3h2.5v8z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/luni.detailing" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><path d="M17 6.9h.01"/></svg>
+            </a>
+            <a href="https://wa.me/420733248967" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5 5 16a8.5 8.5 0 1 1 3.5 3.5l-5 1z"/><path d="M9 9c0 3 3 6 6 6l1.5-1.5-2-1.5-1 1c-1-.4-2.6-2-3-3l1-1L10 7 8.5 8.5"/></svg>
+            </a>
+            <a href="tel:+420728420689" aria-label="Telefon">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+            </a>
+            <a href="mailto:lunidetailing@seznam.cz" aria-label="E-mail">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="lines" data-reveal>
+          <a href="tel:+420728420689">
+            <span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Telefon</span>
+            <span class="v">+420 728 420 689</span>
+          </a>
+          <a href="https://wa.me/420733248967" target="_blank" rel="noopener">
+            <span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5 5 16a8.5 8.5 0 1 1 3.5 3.5l-5 1z"/><path d="M9 9c0 3 3 6 6 6l1.5-1.5-2-1.5-1 1c-1-.4-2.6-2-3-3l1-1L10 7 8.5 8.5"/></svg>WhatsApp</span>
+            <span class="v">+420 733 248 967</span>
+          </a>
+          <a href="mailto:lunidetailing@seznam.cz">
+            <span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>E-mail</span>
+            <span class="v">lunidetailing@seznam.cz</span>
+          </a>
+          <a href="https://www.instagram.com/luni.detailing" target="_blank" rel="noopener">
+            <span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><path d="M17 6.9h.01"/></svg>Instagram</span>
+            <span class="v">@luni.detailing</span>
+          </a>
+          <a href="https://www.facebook.com/share/1JDVrinn9F/" target="_blank" rel="noopener">
+            <span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 21v-8H17l.5-3h-3V8.2c0-.9.3-1.4 1.5-1.4H18V4.1A20 20 0 0 0 15.6 4C13.2 4 11.5 5.4 11.5 8v2H9v3h2.5v8z"/></svg>Facebook</span>
+            <span class="v">LuNi Detailing</span>
+          </a>
+          <div>
+            <span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Studio</span>
+            <span class="v">Rudíkov, okres Třebíč</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot">
+      <span>© 2026 LuNi DETAILING</span>
+      <span>Rudíkov · okres Třebíč · Kraj Vysočina</span>
+      <a class="sep" href="mailto:lunidetailing@seznam.cz">lunidetailing@seznam.cz</a>
+      <a href="tel:+420728420689">+420 728 420 689</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.onScroll = () => {
+      const el = this.nav;
+      if (!el) return;
+      const on = window.scrollY > 24;
+      el.style.background = on ? 'rgba(10,10,11,0.82)' : 'transparent';
+      el.style.backdropFilter = on ? 'blur(16px) saturate(1.2)' : 'none';
+      el.style.webkitBackdropFilter = on ? 'blur(16px) saturate(1.2)' : 'none';
+      el.style.borderBottomColor = on ? 'rgba(237,233,226,0.10)' : 'transparent';
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+
+    // <details> se samo nezavře, když uvnitř klikneš na kotvu.
+    const menu = document.querySelector('.menu');
+    if (menu) menu.addEventListener('click', (e) => {
+      if (e.target.closest('.sheet a')) menu.open = false;
+    });
+
+    const targets = document.querySelectorAll('[data-reveal]');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      targets.forEach((el) => { el.dataset.seen = '1'; });
+      return;
+    }
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.dataset.seen = '1';
+        this.io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    targets.forEach((el) => this.io.observe(el));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    if (this.io) this.io.disconnect();
+  }
+
+  renderVals() {
+    return { navRef: (el) => { this.nav = el; } };
+  }
+}
+</script>
+</body>
+</html>

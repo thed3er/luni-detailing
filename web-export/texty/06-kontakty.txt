@@ -1,0 +1,33 @@
+======================================================================
+URL:              https://lunidetailing.simdif.com/contact.html
+Titulek (title):  Pro rezervaci termínu nás kontaktujte telefonicky nebo e-mailem.
+Meta description: (prázdná)
+Meta keywords:    (prázdná)
+OG title:         Pro rezervaci termínu nás kontaktujte telefonicky nebo e-mailem.
+======================================================================
+
+## OBSAH STRÁNKY
+
+
+[H1] Máte dotaz ohledně služeb LuNi Detailing? Neváhejte nás kontaktovat.
+--------------------------------------------------------------------
+Volat LuNi DETAILING
+Kontaktovat LuNi DETAILING
+Facebook
+Instagram
+Kontaktujte nás e-mailem
+Vaše e-mailová adresa:
+Předmět vaší zprávy:
+Vaše zpráva:
+
+## OBRÁZKY (alt text | soubor)
+
+  Kontaktujte nás | images/th/sd_69fb2d10481cc.png?no_cache=1778075971
+
+## ODKAZY
+
+  Volat LuNi DETAILING                     -> tel:420728420689
+  Kontaktovat LuNi DETAILING               -> https://wa.me/420733248967
+  Facebook                                 -> https://www.facebook.com/share/1JDVrinn9F/?mibextid=wwXIfr
+  Instagram                                -> https://www.instagram.com/luni.detailing?igsh=OGFwbGJvNTV1dDM5
+  (bez textu)                              -> images/public/sd_69fb2d10481cc.png?no_cache=1778075971

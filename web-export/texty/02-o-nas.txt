@@ -1,0 +1,52 @@
+======================================================================
+URL:              https://lunidetailing.simdif.com/o_nás.html
+Titulek (title):  O nás
+Meta description: (prázdná)
+Meta keywords:    (prázdná)
+OG title:         O nás
+======================================================================
+
+## OBSAH STRÁNKY
+
+
+[H1] O nás
+-----
+
+[H2] Představení LuNi DETAILING
+--------------------------
+Před více než 15 lety jsme začínali jen s pár penězi, ale s velkým odhodláním a vášní pro auta. Postupně jsme se pohybovali ve světě nákupu a prodeje vozidel, kde jsme získávali zkušenosti, budovali kontakty a učili se, co zákazníci od kvalitní péče o vůz opravdu očekávají.
+Právě dlouholetá praxe a cit pro detail nás dovedly až k založení Luni Detailing. Dnes spojujeme zkušenosti z automobilového prostředí s profesionální péčí o vozy, protože víme, že auto není jen dopravní prostředek, ale často i radost, vizitka a srdcová záležitost.
+V LuNi DETAILING věříme, že auto není jen dopravní prostředek – je to právě vizitka svého majitele. Proto každému vozu věnujeme maximální péči, preciznost a detail, který je pro profesionální detailing typický.
+Používáme kvalitní profesionální přípravky, moderní technologie a především pečlivý přístup. Naším cílem je, aby každý zákazník odjížděl s pocitem, že jeho vůz vypadá lépe než kdy dříve.
+Ať už jde o kompletní čištění interiéru, obnovu laku nebo pravidelnou péči o vozidlo – LuNi DETAILING je místo, kde se detail stává standardem.
+Naše mise
+Naší misí je poskytovat precizní a profesionální péči o vozidla, která zvyšuje komfort, estetiku a hodnotu každého auta.
+Chceme, aby každý zákazník zažil pocit dokonale čistého a ošetřeného vozu.
+Naše vize
+Naší vizí je stát se spolehlivým a vyhledávaným partnerem v oblasti auto detailingu, který je známý svou kvalitou, precizností a individuálním přístupem ke každému zákazníkovi.
+Chceme budovat značku, která bude synonymem pro luxusní péči o automobily.
+Naše hodnoty
+Preciznost
+Detail rozhoduje. Každému vozu věnujeme maximální pozornost.
+Kvalita
+Používáme ověřené profesionální produkty a moderní postupy.
+Spolehlivost
+Dodržujeme domluvené termíny a vždy jednáme férově.
+Individuální přístup
+Každé auto i zákazník je jiný – přizpůsobujeme péči konkrétním potřebám.
+Naše motto
+Dokonalá čistota. Luxusní péče o váš vůz.
+
+[H2] Máte dotaz ohledně služeb LuNi Detailing? Neváhejte nás kontaktovat.
+--------------------------------------------------------------------
+
+## OBRÁZKY (alt text | soubor)
+
+  LuNi DETAILING | images/th/sd_69afe1272ca0b.png?no_cache=1773137754
+  Kontaktujte nás | images/th/sd_69fb2d10481cc.png?no_cache=1778075971
+
+## ODKAZY
+
+  (bez textu)                              -> images/public/sd_69afe1272ca0b.png?no_cache=1773137754
+  (bez textu)                              -> images/public/sd_69fb2d10481cc.png?no_cache=1778075971
+  Číst dále...                             -> contact.html

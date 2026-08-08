@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="LuNi Detailing">
+  <rect width="40" height="40" rx="4" fill="#0A0A0B"/>
+  <rect x=".6" y=".6" width="38.8" height="38.8" rx="3.6" fill="none" stroke="#7A5A24" stroke-width="1.2"/>
+  <g fill="none" stroke="#D9B96E" stroke-width="2.6" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M11 11v18h7"/>
+    <path d="M22 29V11l8 18V11"/>
+  </g>
+</svg>
