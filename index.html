@@ -14,8 +14,11 @@
 <meta property="og:locale" content="cs_CZ" />
 <link rel="canonical" href="https://lunidetailing.cz/" />
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" />
+<!-- Fonty jsou self-hostované (vendor/fonts). Předepínáme oba soubory, které
+     stránka potřebuje hned: nadpisy a běžný text v základní latince. -->
+<link rel="preload" href="vendor/fonts/antonio-latin.woff2" as="font" type="font/woff2" crossorigin="" />
+<link rel="preload" href="vendor/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin="" />
+<link rel="stylesheet" href="vendor/fonts/fonts.css" />
 <!-- Import mapa musí být v <head> a před prvním modulem: jakmile se jednou
      rozhodne o nějakém specifikátoru, pozdější mapa se ignoruje.
      three.js je self-hostovaný (vendor/three 0.160.0) — hero nezávisí na cizí
