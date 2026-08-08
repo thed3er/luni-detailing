@@ -181,8 +181,10 @@ class HeroCar extends HTMLElement {
     root.innerHTML = `
 <style>
   :host { display:block; position:relative; width:100%; height:100%; }
-  .stage { position:absolute; inset:0; touch-action:none; cursor:grab; outline:none; }
-  .stage[data-grab="1"] { cursor:grabbing; }
+  /* Kurzor dědíme ze stránky přes custom property — ta prochází i hranicí shadow DOM.
+     Bez proměnné by houba na scéně chyběla a nad autem by naskočila zpátky ruka. */
+  .stage { position:absolute; inset:0; touch-action:none; outline:none;
+    cursor:var(--cur-sponge, grab); cursor:var(--cur-sponge-hi, grab); }
   .stage:focus-visible { outline:1px solid ${a}; outline-offset:6px; }
   canvas { display:block; width:100%; height:100%; position:relative; z-index:1; }
   .room { position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden; border-radius:inherit;
