@@ -1,7 +1,8 @@
 # LuNi DETAILING
 
 Jednostránkový web detailingového studia v Rudíkově (okres Třebíč).
-Statický — žádný build, žádný backend.
+Statický — žádný build, žádný backend, žádný framework. Obsah je v HTML,
+takže stránka je vidět i bez JavaScriptu.
 
 ## Spuštění lokálně
 
@@ -18,8 +19,8 @@ mapa a načítání GLB potřebují HTTP.
 |---|---|
 | `index.html` | celá stránka — obsah, styly i logika |
 | `hero-car.js` | 3D model auta v hero sekci (custom element `<hero-car>`) |
-| `support.js` | dc-runtime, který zpracovává `<x-dc>` |
 | `vendor/three/` | three.js 0.160.0 + Draco dekodér, self-hostované |
+| `vendor/gsap.min.js` | jen na vyhlazení pozice houby nad nadpisem |
 | `kia-sportage-gt-line-2023/source/car-opt.glb` | model vozu (4,3 MB, Draco + WebP) |
 | `assets/` | logo, fotka studia |
 | `web-export/` | podklady stažené z původního webu — texty, ceník, fotky |

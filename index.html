@@ -3,21 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The import map has to be in the real <head>: a map appended later is ignored
-     once any module specifier has resolved. Same reason the module tag lives here. -->
-<!-- three.js je self-hostovaný (vendor/three, verze 0.160.0). CDN odpadá:
-     hero nezávisí na cizí doméně a nejde ji podstrčit. -->
-<script type="importmap">
-{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}
-</script>
-<script type="module" src="./hero-car.js"></script>
-<!-- GSAP je vendorovaný, ne z CDN — three.js přes unpkg už jednu cizí doménu stačí. -->
-<script src="./vendor/gsap.min.js"></script>
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
 <title>LuNi DETAILING — auto detailing Rudíkov, okres Třebíč</title>
 <meta name="description" content="Profesionální auto detailing na Vysočině. Čištění interiéru od 990 Kč, leštění laku, keramická ochrana až na 3 roky. Studio v Rudíkově u Třebíče, jezdíme po celé ČR." />
 <meta name="theme-color" content="#0A0A0B" />
@@ -31,6 +16,16 @@
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" />
+<!-- Import mapa musí být v <head> a před prvním modulem: jakmile se jednou
+     rozhodne o nějakém specifikátoru, pozdější mapa se ignoruje.
+     three.js je self-hostovaný (vendor/three 0.160.0) — hero nezávisí na cizí
+     doméně a nejde ji podstrčit. -->
+<script type="importmap">
+{"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}
+</script>
+<script type="module" src="./hero-car.js"></script>
+<!-- GSAP je vendorovaný, ne z CDN. -->
+<script defer src="./vendor/gsap.min.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -323,11 +318,11 @@
     [data-reveal] { opacity:1; transform:none; }
   }
 </style>
-</helmet>
+</head>
 
-<div>
+<body>
 
-  <header class="nav" ref="{{ navRef }}">
+  <header class="nav">
     <a class="brand" href="#uvod" aria-label="LuNi Detailing, na začátek stránky">
       <img src="assets/mark.svg" alt="" width="34" height="34" />
       <b>Lu<span>Ni</span></b>
@@ -374,9 +369,8 @@
 
       <div class="hero-stage">
         <div class="stage">
-          <x-import component-from-global-scope="hero-car"
-                    src="./kia-sportage-gt-line-2023/source/car-opt.glb"
-                    accent="#C9A24A" spin="44" split="74" hint-size="100%,100%"></x-import>
+          <hero-car src="./kia-sportage-gt-line-2023/source/car-opt.glb"
+                    accent="#C9A24A" spin="44" split="74"></hero-car>
         </div>
         <p class="stage-note">
           <span>
@@ -736,45 +730,48 @@
     </div>
   </footer>
 
-</div>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  componentDidMount() {
-    this.onScroll = () => {
-      const el = this.nav;
-      if (!el) return;
-      const on = window.scrollY > 24;
-      el.style.background = on ? 'rgba(10,10,11,0.82)' : 'transparent';
-      el.style.backdropFilter = on ? 'blur(16px) saturate(1.2)' : 'none';
-      el.style.webkitBackdropFilter = on ? 'blur(16px) saturate(1.2)' : 'none';
-      el.style.borderBottomColor = on ? 'rgba(237,233,226,0.10)' : 'transparent';
-    };
-    window.addEventListener('scroll', this.onScroll, { passive: true });
-    this.onScroll();
+<!-- Obyčejný skript na konci <body>. Dřív tu byla komponenta pro dc-runtime,
+     jenže ten si v prohlížeči tahal React + ReactDOM + @babel/standalone
+     (3,3 MB z unpkg) a bez nich byla stránka prázdná — všechen obsah se
+     renderoval až z JS. Tohle jsou tři posluchače, na to React netřeba. -->
+<script>
+// Čeká se na DOMContentLoaded, protože gsap.min.js je `defer` — odložené
+// skripty doběhnou až po parsování, ale ještě před touhle událostí.
+document.addEventListener('DOMContentLoaded', () => {
+  // ---- pozadí navigace při scrollu ----
+  const nav = document.querySelector('.nav');
+  const onScroll = () => {
+    const on = window.scrollY > 24;
+    nav.style.background = on ? 'rgba(10,10,11,0.82)' : 'transparent';
+    nav.style.backdropFilter = on ? 'blur(16px) saturate(1.2)' : 'none';
+    nav.style.webkitBackdropFilter = on ? 'blur(16px) saturate(1.2)' : 'none';
+    nav.style.borderBottomColor = on ? 'rgba(237,233,226,0.10)' : 'transparent';
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-    // <details> se samo nezavře, když uvnitř klikneš na kotvu.
-    const menu = document.querySelector('.menu');
-    if (menu) menu.addEventListener('click', (e) => {
-      if (e.target.closest('.sheet a')) menu.open = false;
-    });
+  // ---- <details> se samo nezavře, když uvnitř klikneš na kotvu ----
+  const menu = document.querySelector('.menu');
+  if (menu) menu.addEventListener('click', (e) => {
+    if (e.target.closest('.sheet a')) menu.open = false;
+  });
 
-    this.initGrime();
-
-    const targets = document.querySelectorAll('[data-reveal]');
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      targets.forEach((el) => { el.dataset.seen = '1'; });
-      return;
-    }
-    this.io = new IntersectionObserver((entries) => {
+  // ---- odhalování sekcí při scrollu ----
+  const targets = document.querySelectorAll('[data-reveal]');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    targets.forEach((el) => { el.dataset.seen = '1'; });
+  } else {
+    const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (!e.isIntersecting) return;
         e.target.dataset.seen = '1';
-        this.io.unobserve(e.target);
+        io.unobserve(e.target);
       });
     }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
-    targets.forEach((el) => this.io.observe(el));
+    targets.forEach((el) => io.observe(el));
   }
+
+  initGrime();
 
   // Špinavý nadpis, který se myje houbou.
   //
@@ -786,7 +783,7 @@ class Component extends DCLogic {
   // Špína je záměrně nesouvislá. Nadpis nemá být celý zašpiněný, jen ušmudlaný
   // v místech, a i nejšpinavější bod si drží kontrast 3,6:1 na pozadí, takže
   // nadpis zůstane čitelný, i kdyby na něj nikdo nikdy nenajel.
-  initGrime() {
+  function initGrime() {
     const h1 = document.querySelector('.hero h1');
     // Bez myši není čím mýt — dotykové a klávesnicové návštěvníky nechám
     // s čistým nadpisem, ne s nadpisem, co jde zašpiněný odstranit.
@@ -884,48 +881,28 @@ class Component extends DCLogic {
     const qy = smooth ? gsap.quickTo(brush, 'y', { duration: 0.16, ease: 'power3' }) : null;
     const tick = () => wipeTo(brush.x, brush.y);
 
-    this.grimeMove = (e) => {
-      const r = cv.getBoundingClientRect();
-      const x = e.clientX - r.left, y = e.clientY - r.top;
-      if (smooth) { qx(x); qy(y); } else { wipeTo(x, y); }
-    };
-    this.grimeEnter = (e) => {
+    h1.addEventListener('pointerenter', (e) => {
       const r = cv.getBoundingClientRect();
       brush.x = e.clientX - r.left; brush.y = e.clientY - r.top;
       prev = null;
       if (smooth) gsap.ticker.add(tick);
-    };
+    });
+    h1.addEventListener('pointermove', (e) => {
+      const r = cv.getBoundingClientRect();
+      const x = e.clientX - r.left, y = e.clientY - r.top;
+      if (smooth) { qx(x); qy(y); } else { wipeTo(x, y); }
+    });
     // Ticker běží jen nad nadpisem — jinak by držel rAF naživo na celé stránce.
-    this.grimeLeave = () => { if (smooth) gsap.ticker.remove(tick); prev = null; };
-
-    h1.addEventListener('pointerenter', this.grimeEnter);
-    h1.addEventListener('pointermove', this.grimeMove);
-    h1.addEventListener('pointerleave', this.grimeLeave);
+    h1.addEventListener('pointerleave', () => {
+      if (smooth) gsap.ticker.remove(tick);
+      prev = null;
+    });
 
     paint();
     // Přeteče-li nadpis na jiný počet řádků, špína se nakreslí znovu (a smyje se).
-    this.grimeRO = new ResizeObserver(paint);
-    this.grimeRO.observe(h1);
-    this.grimeEl = h1;
-    this.grimeTick = tick;
+    new ResizeObserver(paint).observe(h1);
   }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.onScroll);
-    if (this.grimeEl) {
-      this.grimeEl.removeEventListener('pointerenter', this.grimeEnter);
-      this.grimeEl.removeEventListener('pointermove', this.grimeMove);
-      this.grimeEl.removeEventListener('pointerleave', this.grimeLeave);
-    }
-    if (this.grimeRO) this.grimeRO.disconnect();
-    if (this.grimeTick && typeof gsap !== 'undefined') gsap.ticker.remove(this.grimeTick);
-    if (this.io) this.io.disconnect();
-  }
-
-  renderVals() {
-    return { navRef: (el) => { this.nav = el; } };
-  }
-}
+});
 </script>
 </body>
 </html>
