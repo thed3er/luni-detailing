@@ -13,11 +13,18 @@
 # a repo by narostlo z 12 MB na 60 MB.
 # ---------------------------------------------------------------
 
-# Nekomprimovaný model (27 MB). Web používá car-opt.glb (4,3 MB),
-# vyrobený příkazem:
-#   npx @gltf-transform/cli optimize "the car.glb" car-opt.glb \
-#     --compress draco --texture-compress webp
+# Nekomprimovaný model (27 MB). Web používá kia-sportage-gt-line-2023/web/,
+# vyrobené příkazem:
+#   npx @gltf-transform/cli optimize "the car.glb" web/car.gltf \
+#     --compress quantize --texture-compress webp
 kia-sportage-gt-line-2023/source/the car.glb
+
+# Draco varianta (4,3 MB v jednom souboru, ale potřebuje výjimky v CSP —
+# worker-src blob: a wasm-unsafe-eval). Zůstává lokálně pro případ, že by se
+# ta pravidla na Cloudflare doplnila. Vyrobí se příkazem:
+#   npx @gltf-transform/cli optimize "the car.glb" source/car-opt.glb \
+#     --compress draco --texture-compress webp
+kia-sportage-gt-line-2023/source/car-opt.glb
 
 # Textury modelu (12 MB) — GLB je má zabalené v sobě
 kia-sportage-gt-line-2023/textures/

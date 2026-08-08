@@ -22,7 +22,7 @@ mapa a načítání GLB potřebují HTTP.
 | `vendor/three/` | three.js 0.160.0 + Draco dekodér, self-hostované |
 | `vendor/fonts/` | Antonio + Manrope, self-hostované (88 kB) |
 | `vendor/gsap.min.js` | jen na vyhlazení pozice houby nad nadpisem |
-| `kia-sportage-gt-line-2023/source/car-opt.glb` | model vozu (4,3 MB, Draco + WebP) |
+| `kia-sportage-gt-line-2023/web/` | model vozu — `car.gltf`, `car.bin` a 24 WebP textur |
 | `assets/` | logo, fotka studia |
 | `web-export/` | podklady stažené z původního webu — texty, ceník, fotky |
 | `denik/` | deník změn |
@@ -34,15 +34,14 @@ web je nenačítá.
 
 GitHub Pages: Settings → Pages → Deploy from branch → `main` / `root`.
 
-Stránka za běhu nesahá na žádnou cizí doménu (ověřeno: 19 požadavků,
-0 cizích origin). Pokud je před ní CSP, musí povolit tohle — jinak se
-nenačte 3D model:
+Stránka za běhu nesahá na žádnou cizí doménu a **nepotřebuje žádnou výjimku
+v Content-Security-Policy** — vystačí si s `default-src 'self'`. Ověřeno proti
+politice, kterou před GitHub Pages staví Cloudflare: 0 chyb, 0 varování.
 
-```
-script-src  … 'wasm-unsafe-eval'   ← Draco dekodér je WebAssembly
-worker-src  blob:                  ← Draco běží ve workeru z blob URL
-connect-src … blob:                ← WebP textury z GLB jde loader načíst přes fetch
-```
+Kvůli tomu je model `.gltf` se samostatnými texturami a jen kvantizovaný,
+ne Draco. Draco by potřeboval `worker-src blob:` a `'wasm-unsafe-eval'`,
+zabalené textury zase `connect-src blob:`. Cena za nezávislost na CSP je
+11,35 MB místo 4,27 MB.
 
 Při vlastní doméně nezapomenout, že `og:image`, `og:url` a `canonical`
 v `index.html` jsou napsané absolutně na `https://lunidetailing.cz`.
