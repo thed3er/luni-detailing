@@ -16,7 +16,8 @@
 # Nekomprimovaný model (27 MB). Web používá kia-sportage-gt-line-2023/web/,
 # vyrobené příkazem:
 #   npx @gltf-transform/cli optimize "the car.glb" web/car.gltf \
-#     --compress quantize --texture-compress webp
+#     --compress quantize --texture-compress webp \
+#     --texture-size 1024 --simplify-ratio 0.15 --simplify-error 0.02
 kia-sportage-gt-line-2023/source/the car.glb
 
 # Draco varianta (4,3 MB v jednom souboru, ale potřebuje výjimky v CSP —

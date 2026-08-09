@@ -40,8 +40,8 @@ politice, kterou před GitHub Pages staví Cloudflare: 0 chyb, 0 varování.
 
 Kvůli tomu je model `.gltf` se samostatnými texturami a jen kvantizovaný,
 ne Draco. Draco by potřeboval `worker-src blob:` a `'wasm-unsafe-eval'`,
-zabalené textury zase `connect-src blob:`. Cena za nezávislost na CSP je
-11,35 MB místo 4,27 MB.
+zabalené textury zase `connect-src blob:`. Model je po zjednodušení geometrie 3,84 MB, tedy menší než dřívější
+Draco varianta — nezávislost na CSP nestojí nic navíc.
 
 Při vlastní doméně nezapomenout, že `og:image`, `og:url` a `canonical`
 v `index.html` jsou napsané absolutně na `https://lunidetailing.cz`.

@@ -7,182 +7,182 @@
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 2601,
+      "count": 579,
       "bufferView": 0,
       "byteOffset": 0
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 7356,
+      "count": 2592,
       "bufferView": 0,
-      "byteOffset": 5204
+      "byteOffset": 1160
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 870,
+      "count": 417,
       "bufferView": 0,
-      "byteOffset": 19916
+      "byteOffset": 6344
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 2862,
+      "count": 468,
       "bufferView": 0,
-      "byteOffset": 21656
+      "byteOffset": 7180
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 19356,
+      "count": 5178,
       "bufferView": 0,
-      "byteOffset": 27380
+      "byteOffset": 8116
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 831,
+      "count": 129,
       "bufferView": 0,
-      "byteOffset": 66092
+      "byteOffset": 18472
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 9036,
+      "count": 1506,
       "bufferView": 0,
-      "byteOffset": 67756
+      "byteOffset": 18732
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 2853,
+      "count": 471,
       "bufferView": 0,
-      "byteOffset": 85828
+      "byteOffset": 21744
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 22446,
+      "count": 4053,
       "bufferView": 0,
-      "byteOffset": 91536
+      "byteOffset": 22688
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 10719,
+      "count": 2277,
       "bufferView": 0,
-      "byteOffset": 136428
+      "byteOffset": 30796
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 3666,
+      "count": 759,
       "bufferView": 0,
-      "byteOffset": 157868
+      "byteOffset": 35352
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 876,
+      "count": 150,
       "bufferView": 0,
-      "byteOffset": 165200
+      "byteOffset": 36872
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 2265,
+      "count": 342,
       "bufferView": 0,
-      "byteOffset": 166952
+      "byteOffset": 37172
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 1152,
+      "count": 210,
       "bufferView": 0,
-      "byteOffset": 171484
+      "byteOffset": 37856
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 24,
+      "count": 12,
       "bufferView": 0,
-      "byteOffset": 173788
+      "byteOffset": 38276
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 306,
+      "count": 69,
       "bufferView": 0,
-      "byteOffset": 173836
+      "byteOffset": 38300
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 36,
+      "count": 3,
       "bufferView": 0,
-      "byteOffset": 174448
+      "byteOffset": 38440
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 2004,
+      "count": 342,
       "bufferView": 0,
-      "byteOffset": 174520
+      "byteOffset": 38448
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 372,
+      "count": 117,
       "bufferView": 0,
-      "byteOffset": 178528
+      "byteOffset": 39132
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 432,
+      "count": 60,
       "bufferView": 0,
-      "byteOffset": 179272
+      "byteOffset": 39368
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 25341,
+      "count": 15441,
       "bufferView": 0,
-      "byteOffset": 180136
-    },
-    {
-      "type": "SCALAR",
-      "componentType": 5125,
-      "count": 801402,
-      "bufferView": 0,
-      "byteOffset": 230820
+      "byteOffset": 39488
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 1440,
+      "count": 235317,
       "bufferView": 0,
-      "byteOffset": 3436428
+      "byteOffset": 70372
     },
     {
       "type": "SCALAR",
       "componentType": 5123,
-      "count": 19092,
+      "count": 264,
       "bufferView": 0,
-      "byteOffset": 3439308
+      "byteOffset": 541008
+    },
+    {
+      "type": "SCALAR",
+      "componentType": 5123,
+      "count": 2967,
+      "bufferView": 0,
+      "byteOffset": 541536
     },
     {
       "type": "VEC2",
       "componentType": 5126,
-      "count": 1023,
+      "count": 367,
       "bufferView": 1,
       "byteOffset": 0
     },
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 1023,
+      "count": 367,
       "normalized": true,
       "bufferView": 1,
       "byteOffset": 8
@@ -190,16 +190,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 1023,
+      "count": 367,
       "max": [
-        12509,
+        13073,
         32767,
-        4304
+        3644
       ],
       "min": [
-        -12509,
+        -13073,
         -32767,
-        -4304
+        -3644
       ],
       "normalized": true,
       "bufferView": 1,
@@ -208,7 +208,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 1023,
+      "count": 367,
       "normalized": true,
       "bufferView": 1,
       "byteOffset": 20
@@ -216,14 +216,14 @@
     {
       "type": "VEC2",
       "componentType": 5126,
-      "count": 1231,
+      "count": 437,
       "bufferView": 2,
       "byteOffset": 0
     },
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 1231,
+      "count": 437,
       "normalized": true,
       "bufferView": 2,
       "byteOffset": 8
@@ -231,7 +231,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 1231,
+      "count": 437,
       "max": [
         17182,
         32767,
@@ -249,7 +249,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 1231,
+      "count": 437,
       "normalized": true,
       "bufferView": 2,
       "byteOffset": 20
@@ -257,14 +257,14 @@
     {
       "type": "VEC2",
       "componentType": 5126,
-      "count": 334,
+      "count": 184,
       "bufferView": 3,
       "byteOffset": 0
     },
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 334,
+      "count": 184,
       "normalized": true,
       "bufferView": 3,
       "byteOffset": 8
@@ -272,16 +272,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 334,
+      "count": 184,
       "max": [
-        13181,
+        13157,
         32767,
-        4848
+        4852
       ],
       "min": [
-        -13181,
+        -13157,
         -32767,
-        -4848
+        -4852
       ],
       "normalized": true,
       "bufferView": 3,
@@ -290,7 +290,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 334,
+      "count": 184,
       "normalized": true,
       "bufferView": 3,
       "byteOffset": 20
@@ -298,7 +298,7 @@
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 164,
+      "count": 36,
       "normalized": true,
       "bufferView": 4,
       "byteOffset": 0
@@ -306,16 +306,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 164,
+      "count": 36,
       "max": [
         32767,
-        13273,
-        25423
+        13281,
+        25459
       ],
       "min": [
         -32767,
-        -13273,
-        -25423
+        -13281,
+        -25459
       ],
       "normalized": true,
       "bufferView": 4,
@@ -324,7 +324,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 164,
+      "count": 36,
       "normalized": true,
       "bufferView": 4,
       "byteOffset": 12
@@ -332,7 +332,7 @@
     {
       "type": "VEC2",
       "componentType": 5123,
-      "count": 164,
+      "count": 36,
       "normalized": true,
       "bufferView": 4,
       "byteOffset": 20
@@ -340,7 +340,7 @@
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 1767,
+      "count": 360,
       "normalized": true,
       "bufferView": 5,
       "byteOffset": 0
@@ -348,16 +348,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 1767,
+      "count": 360,
       "max": [
-        27727,
+        27735,
         32767,
-        13169
+        13181
       ],
       "min": [
-        -27727,
+        -27735,
         -32767,
-        -13169
+        -13181
       ],
       "normalized": true,
       "bufferView": 5,
@@ -366,7 +366,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 1767,
+      "count": 360,
       "normalized": true,
       "bufferView": 5,
       "byteOffset": 12
@@ -374,7 +374,7 @@
     {
       "type": "VEC2",
       "componentType": 5123,
-      "count": 1767,
+      "count": 360,
       "normalized": true,
       "bufferView": 5,
       "byteOffset": 20
@@ -382,14 +382,14 @@
     {
       "type": "VEC2",
       "componentType": 5126,
-      "count": 496,
+      "count": 96,
       "bufferView": 6,
       "byteOffset": 0
     },
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 496,
+      "count": 96,
       "normalized": true,
       "bufferView": 6,
       "byteOffset": 8
@@ -397,16 +397,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 496,
+      "count": 96,
       "max": [
         32767,
-        15329,
-        29571
+        15269,
+        29471
       ],
       "min": [
         -32767,
-        -15329,
-        -29571
+        -15269,
+        -29471
       ],
       "normalized": true,
       "bufferView": 6,
@@ -415,7 +415,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 496,
+      "count": 96,
       "normalized": true,
       "bufferView": 6,
       "byteOffset": 20
@@ -423,14 +423,14 @@
     {
       "type": "VEC2",
       "componentType": 5126,
-      "count": 4235,
+      "count": 895,
       "bufferView": 7,
       "byteOffset": 0
     },
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 4235,
+      "count": 895,
       "normalized": true,
       "bufferView": 7,
       "byteOffset": 8
@@ -438,16 +438,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 4235,
+      "count": 895,
       "max": [
-        17266,
+        17270,
         32767,
-        15713
+        15685
       ],
       "min": [
-        -17266,
+        -17270,
         -32767,
-        -15713
+        -15685
       ],
       "normalized": true,
       "bufferView": 7,
@@ -456,7 +456,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 4235,
+      "count": 895,
       "normalized": true,
       "bufferView": 7,
       "byteOffset": 20
@@ -464,14 +464,14 @@
     {
       "type": "VEC2",
       "componentType": 5126,
-      "count": 2661,
+      "count": 868,
       "bufferView": 8,
       "byteOffset": 0
     },
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 2661,
+      "count": 868,
       "normalized": true,
       "bufferView": 8,
       "byteOffset": 8
@@ -479,16 +479,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 2661,
+      "count": 868,
       "max": [
         17098,
         32767,
-        9097
+        9085
       ],
       "min": [
         -17098,
         -32767,
-        -9097
+        -9085
       ],
       "normalized": true,
       "bufferView": 8,
@@ -497,7 +497,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 2661,
+      "count": 868,
       "normalized": true,
       "bufferView": 8,
       "byteOffset": 20
@@ -505,14 +505,14 @@
     {
       "type": "VEC2",
       "componentType": 5126,
-      "count": 632,
+      "count": 138,
       "bufferView": 9,
       "byteOffset": 0
     },
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 632,
+      "count": 138,
       "normalized": true,
       "bufferView": 9,
       "byteOffset": 8
@@ -520,16 +520,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 632,
+      "count": 138,
       "max": [
         32767,
-        31079,
-        27139
+        31075,
+        27147
       ],
       "min": [
         -32767,
-        -31079,
-        -27139
+        -31075,
+        -27147
       ],
       "normalized": true,
       "bufferView": 9,
@@ -538,7 +538,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 632,
+      "count": 138,
       "normalized": true,
       "bufferView": 9,
       "byteOffset": 20
@@ -546,14 +546,14 @@
     {
       "type": "VEC2",
       "componentType": 5126,
-      "count": 267,
+      "count": 56,
       "bufferView": 10,
       "byteOffset": 0
     },
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 267,
+      "count": 56,
       "normalized": true,
       "bufferView": 10,
       "byteOffset": 8
@@ -561,16 +561,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 267,
+      "count": 56,
       "max": [
-        16574,
+        16406,
         32767,
-        4816
+        1160
       ],
       "min": [
-        -16574,
+        -16406,
         -32767,
-        -4816
+        -1160
       ],
       "normalized": true,
       "bufferView": 10,
@@ -579,7 +579,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 267,
+      "count": 56,
       "normalized": true,
       "bufferView": 10,
       "byteOffset": 20
@@ -587,14 +587,14 @@
     {
       "type": "VEC2",
       "componentType": 5126,
-      "count": 487,
+      "count": 97,
       "bufferView": 11,
       "byteOffset": 0
     },
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 487,
+      "count": 97,
       "normalized": true,
       "bufferView": 11,
       "byteOffset": 8
@@ -602,16 +602,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 487,
+      "count": 97,
       "max": [
         32767,
-        15633,
-        30299
+        15493,
+        30255
       ],
       "min": [
         -32767,
-        -15633,
-        -30299
+        -15493,
+        -30255
       ],
       "normalized": true,
       "bufferView": 11,
@@ -620,7 +620,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 487,
+      "count": 97,
       "normalized": true,
       "bufferView": 11,
       "byteOffset": 20
@@ -628,14 +628,14 @@
     {
       "type": "VEC2",
       "componentType": 5126,
-      "count": 499,
+      "count": 144,
       "bufferView": 12,
       "byteOffset": 0
     },
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 499,
+      "count": 144,
       "normalized": true,
       "bufferView": 12,
       "byteOffset": 8
@@ -643,16 +643,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 499,
+      "count": 144,
       "max": [
-        17426,
+        17174,
         32767,
-        9065
+        8973
       ],
       "min": [
-        -17426,
+        -17174,
         -32767,
-        -9065
+        -8973
       ],
       "normalized": true,
       "bufferView": 12,
@@ -661,7 +661,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 499,
+      "count": 144,
       "normalized": true,
       "bufferView": 12,
       "byteOffset": 20
@@ -669,14 +669,14 @@
     {
       "type": "VEC2",
       "componentType": 5126,
-      "count": 12,
+      "count": 8,
       "bufferView": 13,
       "byteOffset": 0
     },
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 12,
+      "count": 8,
       "normalized": true,
       "bufferView": 13,
       "byteOffset": 8
@@ -684,15 +684,15 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 12,
+      "count": 8,
       "max": [
         32767,
-        308,
+        288,
         972
       ],
       "min": [
         -32767,
-        -308,
+        -288,
         -972
       ],
       "normalized": true,
@@ -702,7 +702,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 12,
+      "count": 8,
       "normalized": true,
       "bufferView": 13,
       "byteOffset": 20
@@ -710,14 +710,14 @@
     {
       "type": "VEC2",
       "componentType": 5126,
-      "count": 99,
+      "count": 25,
       "bufferView": 14,
       "byteOffset": 0
     },
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 99,
+      "count": 25,
       "normalized": true,
       "bufferView": 14,
       "byteOffset": 8
@@ -725,16 +725,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 99,
+      "count": 25,
       "max": [
         32767,
-        3824,
-        6036
+        3808,
+        6028
       ],
       "min": [
         -32767,
-        -3824,
-        -6036
+        -3808,
+        -6028
       ],
       "normalized": true,
       "bufferView": 14,
@@ -743,7 +743,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 99,
+      "count": 25,
       "normalized": true,
       "bufferView": 14,
       "byteOffset": 20
@@ -751,7 +751,7 @@
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 16,
+      "count": 3,
       "normalized": true,
       "bufferView": 15,
       "byteOffset": 0
@@ -759,16 +759,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 16,
+      "count": 3,
       "max": [
-        32767,
-        732,
-        1112
+        29955,
+        25659,
+        32767
       ],
       "min": [
-        -32767,
-        -732,
-        -1112
+        -29955,
+        -25659,
+        -32767
       ],
       "normalized": true,
       "bufferView": 15,
@@ -777,7 +777,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 16,
+      "count": 3,
       "normalized": true,
       "bufferView": 15,
       "byteOffset": 12
@@ -785,7 +785,7 @@
     {
       "type": "VEC2",
       "componentType": 5123,
-      "count": 16,
+      "count": 3,
       "normalized": true,
       "bufferView": 15,
       "byteOffset": 20
@@ -793,14 +793,14 @@
     {
       "type": "VEC2",
       "componentType": 5126,
-      "count": 586,
+      "count": 169,
       "bufferView": 16,
       "byteOffset": 0
     },
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 586,
+      "count": 169,
       "normalized": true,
       "bufferView": 16,
       "byteOffset": 8
@@ -808,16 +808,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 586,
+      "count": 169,
       "max": [
         29935,
         32767,
-        13729
+        13713
       ],
       "min": [
         -29935,
         -32767,
-        -13729
+        -13713
       ],
       "normalized": true,
       "bufferView": 16,
@@ -826,7 +826,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 586,
+      "count": 169,
       "normalized": true,
       "bufferView": 16,
       "byteOffset": 20
@@ -834,7 +834,7 @@
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 115,
+      "count": 63,
       "normalized": true,
       "bufferView": 17,
       "byteOffset": 0
@@ -842,14 +842,14 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 115,
+      "count": 63,
       "max": [
-        15165,
+        15065,
         8545,
         32767
       ],
       "min": [
-        -15165,
+        -15065,
         -8545,
         -32767
       ],
@@ -860,7 +860,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 115,
+      "count": 63,
       "normalized": true,
       "bufferView": 17,
       "byteOffset": 12
@@ -868,7 +868,7 @@
     {
       "type": "VEC2",
       "componentType": 5123,
-      "count": 115,
+      "count": 63,
       "normalized": true,
       "bufferView": 17,
       "byteOffset": 20
@@ -876,14 +876,14 @@
     {
       "type": "VEC2",
       "componentType": 5126,
-      "count": 98,
+      "count": 20,
       "bufferView": 18,
       "byteOffset": 0
     },
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 98,
+      "count": 20,
       "normalized": true,
       "bufferView": 18,
       "byteOffset": 8
@@ -891,16 +891,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 98,
+      "count": 20,
       "max": [
         32767,
         6832,
-        4748
+        4724
       ],
       "min": [
         -32767,
         -6832,
-        -4748
+        -4724
       ],
       "normalized": true,
       "bufferView": 18,
@@ -909,7 +909,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 98,
+      "count": 20,
       "normalized": true,
       "bufferView": 18,
       "byteOffset": 20
@@ -917,14 +917,14 @@
     {
       "type": "VEC2",
       "componentType": 5126,
-      "count": 3984,
+      "count": 2722,
       "bufferView": 19,
       "byteOffset": 0
     },
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 3984,
+      "count": 2722,
       "normalized": true,
       "bufferView": 19,
       "byteOffset": 8
@@ -932,16 +932,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 3984,
+      "count": 2722,
       "max": [
-        20742,
+        19846,
         32767,
-        14645
+        14633
       ],
       "min": [
-        -20742,
+        -19846,
         -32767,
-        -14645
+        -14633
       ],
       "normalized": true,
       "bufferView": 19,
@@ -950,7 +950,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 3984,
+      "count": 2722,
       "normalized": true,
       "bufferView": 19,
       "byteOffset": 20
@@ -958,7 +958,7 @@
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 163437,
+      "count": 57778,
       "normalized": true,
       "bufferView": 20,
       "byteOffset": 0
@@ -966,15 +966,15 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 163437,
+      "count": 57778,
       "max": [
-        15297,
-        11385,
+        15293,
+        11373,
         32767
       ],
       "min": [
-        -15297,
-        -11385,
+        -15293,
+        -11373,
         -32767
       ],
       "normalized": true,
@@ -984,7 +984,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 163437,
+      "count": 57778,
       "normalized": true,
       "bufferView": 20,
       "byteOffset": 12
@@ -992,7 +992,7 @@
     {
       "type": "VEC2",
       "componentType": 5123,
-      "count": 163437,
+      "count": 57778,
       "normalized": true,
       "bufferView": 20,
       "byteOffset": 20
@@ -1000,7 +1000,7 @@
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 292,
+      "count": 68,
       "normalized": true,
       "bufferView": 21,
       "byteOffset": 0
@@ -1008,14 +1008,14 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 292,
+      "count": 68,
       "max": [
-        21866,
+        21846,
         792,
         32767
       ],
       "min": [
-        -21866,
+        -21846,
         -792,
         -32767
       ],
@@ -1026,7 +1026,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 292,
+      "count": 68,
       "normalized": true,
       "bufferView": 21,
       "byteOffset": 12
@@ -1034,7 +1034,7 @@
     {
       "type": "VEC2",
       "componentType": 5123,
-      "count": 292,
+      "count": 68,
       "normalized": true,
       "bufferView": 21,
       "byteOffset": 20
@@ -1042,7 +1042,7 @@
     {
       "type": "VEC4",
       "componentType": 5121,
-      "count": 4041,
+      "count": 791,
       "normalized": true,
       "bufferView": 22,
       "byteOffset": 0
@@ -1050,15 +1050,15 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 4041,
+      "count": 791,
       "max": [
-        17806,
-        6784,
+        17794,
+        6768,
         32767
       ],
       "min": [
-        -17806,
-        -6784,
+        -17794,
+        -6768,
         -32767
       ],
       "normalized": true,
@@ -1068,7 +1068,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 4041,
+      "count": 791,
       "normalized": true,
       "bufferView": 22,
       "byteOffset": 12
@@ -1076,7 +1076,7 @@
     {
       "type": "VEC2",
       "componentType": 5123,
-      "count": 4041,
+      "count": 791,
       "normalized": true,
       "bufferView": 22,
       "byteOffset": 20
@@ -1084,16 +1084,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 585,
+      "count": 122,
       "max": [
         18902,
         32767,
-        15373
+        15357
       ],
       "min": [
         -18902,
         -32767,
-        -15373
+        -15357
       ],
       "normalized": true,
       "bufferView": 23,
@@ -1102,7 +1102,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 585,
+      "count": 122,
       "normalized": true,
       "bufferView": 23,
       "byteOffset": 8
@@ -1110,7 +1110,7 @@
     {
       "type": "VEC2",
       "componentType": 5123,
-      "count": 585,
+      "count": 122,
       "normalized": true,
       "bufferView": 23,
       "byteOffset": 16
@@ -1118,16 +1118,16 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 4173,
+      "count": 1371,
       "max": [
         15993,
         32767,
-        9565
+        9549
       ],
       "min": [
         -15993,
         -32767,
-        -9565
+        -9549
       ],
       "normalized": true,
       "bufferView": 24,
@@ -1136,7 +1136,7 @@
     {
       "type": "VEC3",
       "componentType": 5122,
-      "count": 4173,
+      "count": 1371,
       "normalized": true,
       "bufferView": 24,
       "byteOffset": 8
@@ -1144,7 +1144,7 @@
     {
       "type": "VEC2",
       "componentType": 5123,
-      "count": 4173,
+      "count": 1371,
       "normalized": true,
       "bufferView": 24,
       "byteOffset": 16
@@ -1154,174 +1154,174 @@
     {
       "buffer": 0,
       "byteOffset": 0,
-      "byteLength": 3477492,
+      "byteLength": 547472,
       "target": 34963
     },
     {
       "buffer": 0,
-      "byteOffset": 3477492,
-      "byteLength": 28644,
+      "byteOffset": 547472,
+      "byteLength": 10276,
       "byteStride": 28,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3506136,
-      "byteLength": 34468,
+      "byteOffset": 557748,
+      "byteLength": 12236,
       "byteStride": 28,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3540604,
-      "byteLength": 9352,
+      "byteOffset": 569984,
+      "byteLength": 5152,
       "byteStride": 28,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3549956,
-      "byteLength": 3936,
+      "byteOffset": 575136,
+      "byteLength": 864,
       "byteStride": 24,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3553892,
-      "byteLength": 42408,
+      "byteOffset": 576000,
+      "byteLength": 8640,
       "byteStride": 24,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3596300,
-      "byteLength": 13888,
+      "byteOffset": 584640,
+      "byteLength": 2688,
       "byteStride": 28,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3610188,
-      "byteLength": 118580,
+      "byteOffset": 587328,
+      "byteLength": 25060,
       "byteStride": 28,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3728768,
-      "byteLength": 74508,
+      "byteOffset": 612388,
+      "byteLength": 24304,
       "byteStride": 28,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3803276,
-      "byteLength": 17696,
+      "byteOffset": 636692,
+      "byteLength": 3864,
       "byteStride": 28,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3820972,
-      "byteLength": 7476,
+      "byteOffset": 640556,
+      "byteLength": 1568,
       "byteStride": 28,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3828448,
-      "byteLength": 13636,
+      "byteOffset": 642124,
+      "byteLength": 2716,
       "byteStride": 28,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3842084,
-      "byteLength": 13972,
+      "byteOffset": 644840,
+      "byteLength": 4032,
       "byteStride": 28,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3856056,
-      "byteLength": 336,
+      "byteOffset": 648872,
+      "byteLength": 224,
       "byteStride": 28,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3856392,
-      "byteLength": 2772,
+      "byteOffset": 649096,
+      "byteLength": 700,
       "byteStride": 28,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3859164,
-      "byteLength": 384,
+      "byteOffset": 649796,
+      "byteLength": 72,
       "byteStride": 24,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3859548,
-      "byteLength": 16408,
+      "byteOffset": 649868,
+      "byteLength": 4732,
       "byteStride": 28,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3875956,
-      "byteLength": 2760,
+      "byteOffset": 654600,
+      "byteLength": 1512,
       "byteStride": 24,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3878716,
-      "byteLength": 2744,
+      "byteOffset": 656112,
+      "byteLength": 560,
       "byteStride": 28,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3881460,
-      "byteLength": 111552,
+      "byteOffset": 656672,
+      "byteLength": 76216,
       "byteStride": 28,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 3993012,
-      "byteLength": 3922488,
+      "byteOffset": 732888,
+      "byteLength": 1386672,
       "byteStride": 24,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 7915500,
-      "byteLength": 7008,
+      "byteOffset": 2119560,
+      "byteLength": 1632,
       "byteStride": 24,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 7922508,
-      "byteLength": 96984,
+      "byteOffset": 2121192,
+      "byteLength": 18984,
       "byteStride": 24,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 8019492,
-      "byteLength": 11700,
+      "byteOffset": 2140176,
+      "byteLength": 2440,
       "byteStride": 20,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 8031192,
-      "byteLength": 83460,
+      "byteOffset": 2142616,
+      "byteLength": 27420,
       "byteStride": 20,
       "target": 34962
     }
@@ -1659,7 +1659,7 @@
   "buffers": [
     {
       "uri": "car.bin",
-      "byteLength": 8114652
+      "byteLength": 2170036
     }
   ],
   "materials": [
@@ -2799,9 +2799,9 @@
     {
       "name": "Ext_19inch_Type_A_aluminiumbrushed.001",
       "translation": [
-        -1.5379880480281827e-8,
-        0.8605161722805813,
-        0.005530082287385829
+        -0.0006093751074711662,
+        0.859259839733057,
+        0.0056497869474909646
       ],
       "rotation": [
         0.9999999999999761,
@@ -2810,38 +2810,18 @@
         -2.1865255888090667e-7
       ],
       "scale": [
-        2.2579395170970358,
-        2.257939743185281,
-        2.257939743185281
+        2.257077319240331,
+        2.257077545242244,
+        2.257077545242244
       ],
       "mesh": 21
     },
     {
       "name": "Ext_19inch_Type_A_plasticshiny__wheellogo.001",
       "translation": [
-        9.429266345506448e-8,
-        0.3391550059690581,
-        -0.007978455883079327
-      ],
-      "rotation": [
-        0.9999999999999761,
-        0,
-        0,
-        -2.1865255888090665e-7
-      ],
-      "scale": [
-        1.3707584539631348,
-        1.370758591217641,
-        1.370758591217641
-      ],
-      "mesh": 22
-    },
-    {
-      "name": "Ext_19inch_Type_A_wheel_tyres.001",
-      "translation": [
-        8.952429197961465e-8,
-        0.33930104212910145,
-        -0.007979858912664284
+        0.001031478737688829,
+        0.33915500593316705,
+        -0.007896382665025792
       ],
       "rotation": [
         0.9999999999999761,
@@ -2850,9 +2830,29 @@
         -2.1865255888090667e-7
       ],
       "scale": [
-        1.6869109730367882,
-        1.6869111419477527,
-        1.6869111419477527
+        1.3706513563397962,
+        1.3706514935835785,
+        1.3706514935835785
+      ],
+      "mesh": 22
+    },
+    {
+      "name": "Ext_19inch_Type_A_wheel_tyres.001",
+      "translation": [
+        -0.0017409430371957413,
+        0.33807099211572283,
+        -0.006186131436301645
+      ],
+      "rotation": [
+        0.999999999999976,
+        0,
+        0,
+        -2.1865255888090667e-7
+      ],
+      "scale": [
+        1.6851166348505764,
+        1.6851168035818733,
+        1.6851168035818733
       ],
       "mesh": 23
     },
@@ -2860,8 +2860,28 @@
       "name": "Ext_Sportage_2022_frontlight_aluminiumbrushed__squarepatter",
       "translation": [
         0,
-        0.7985318460136194,
-        0.05326653777612466
+        0.8519502975782841,
+        -0.03940144006535658
+      ],
+      "rotation": [
+        0.7071068882942236,
+        0,
+        0,
+        0.7071066740788552
+      ],
+      "scale": [
+        2.0587105863084503,
+        2.058710515841825,
+        2.058710515841825
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "polySurface2",
+      "translation": [
+        -0.0013032912916699502,
+        0.3365059341821787,
+        -0.009895067125075941
       ],
       "rotation": [
         0.7071068882942237,
@@ -2870,38 +2890,18 @@
         0.7071066740788552
       ],
       "scale": [
-        2.151511487554501,
-        2.1515114139114373,
-        2.1515114139114373
-      ],
-      "mesh": 0
-    },
-    {
-      "name": "polySurface2",
-      "translation": [
-        -0.0013034438795571646,
-        0.3365059341821094,
-        -0.009894838243252954
-      ],
-      "rotation": [
-        0.7071068882942236,
-        0,
-        0,
-        0.7071066740788552
-      ],
-      "scale": [
-        1.4923547792653409,
-        1.4923547281842389,
-        1.4923547281842389
+        1.49235455038351,
+        1.4923544993024158,
+        1.4923544993024158
       ],
       "mesh": 1
     },
     {
       "name": "Ext_Sportage_2022_base_petrolcap_carpaint__sensor.001",
       "translation": [
-        -0.12960044571160267,
-        0.8046050761058184,
-        -0.27310993727888727
+        -0.13167483989131057,
+        0.8046050767642143,
+        -0.2752832464820926
       ],
       "rotation": [
         0.7071068882942236,
@@ -2910,9 +2910,9 @@
         0.7071066740788552
       ],
       "scale": [
-        1.957252000929742,
-        1.9572519339358945,
-        1.9572519339358945
+        1.9550786916521474,
+        1.9550786247326888,
+        1.9550786247326888
       ],
       "mesh": 2
     },
@@ -2920,8 +2920,8 @@
       "name": "Int_Sportage_2022_GLS_boot_panel_carpaint.001",
       "translation": [
         0,
-        1.062216746056204,
-        0.8925507231562216
+        1.0617019908363057,
+        0.8925507230002785
       ],
       "rotation": [
         0.7071068882942237,
@@ -2939,29 +2939,29 @@
     {
       "name": "Ext_Sportage_2022_base_Door_FL_glassclear.002",
       "translation": [
-        5.126053181925272e-8,
-        0.9961619044170793,
-        0.04745786998207435
+        0.000281366104097458,
+        0.9960033465686663,
+        0.04734411566801511
       ],
       "rotation": [
-        0.7071068882942235,
+        0.7071068882942236,
         0,
         0,
         0.7071066740788552
       ],
       "scale": [
-        2.1613580602103895,
-        2.1613579862302927,
-        2.1613579862302927
+        2.160996655799522,
+        2.160996581831796,
+        2.160996581831796
       ],
       "mesh": 4
     },
     {
       "name": "Int_Sportage_2022_pedals_GTL_chrome__pedals.001",
       "translation": [
-        -0.28674416854804363,
-        0.4787791676662048,
-        -0.8803625422165309
+        -0.2865723736605261,
+        0.47877916767629364,
+        -0.8803958445217756
       ],
       "rotation": [
         0.7071068882942236,
@@ -2970,29 +2970,29 @@
         0.7071066740788552
       ],
       "scale": [
-        0.11515313844785524,
-        0.11515313450633324,
-        0.11515313450633324
+        0.11498134356033773,
+        0.11498133962469602,
+        0.11498133962469602
       ],
       "mesh": 5
     },
     {
       "name": "Int_Sportage_2022_seats_GTL_leather__seat_gtl3.001",
       "translation": [
-        0,
-        0.7982380073208143,
-        0.5324503131794579
+        0.00015855788830165807,
+        0.7982380071463172,
+        0.5330263133604907
       ],
       "rotation": [
-        0.7071068882942236,
+        0.7071068882942237,
         0,
         0,
         0.7071066740788552
       ],
       "scale": [
-        0.6433213710042525,
-        0.6433213489843113,
-        0.6433213489843113
+        0.642745370803504,
+        0.6427453488032784,
+        0.6427453488032784
       ],
       "mesh": 6
     },
@@ -3000,8 +3000,8 @@
       "name": "Int_Sportage_2022_steeringwheel_leather__steeringwheel.002",
       "translation": [
         -0.3758986770533319,
-        1.0292751988933375,
-        -0.3738503534757072
+        1.0294456395887361,
+        -0.37395338839138764
       ],
       "rotation": [
         0.7071068882942236,
@@ -3019,9 +3019,9 @@
     {
       "name": "Ext_Sportage_2022_GLS_roof_fabrics__roof.001",
       "translation": [
-        -0.0007151794273738687,
-        0.958600861629243,
-        0.28113484424962404
+        -0.0005306243777880582,
+        0.9575120706670855,
+        0.2815646458363785
       ],
       "rotation": [
         0.7071068882942236,
@@ -3030,9 +3030,9 @@
         0.7071066740788552
       ],
       "scale": [
-        1.3526790316549153,
-        1.352678985354708,
-        1.352678985354708
+        1.3522492297236042,
+        1.3522491834381087,
+        1.3522491834381087
       ],
       "mesh": 8
     },
@@ -3040,28 +3040,8 @@
       "name": "Int_Sportage_2022_base_Door_FL_fabrics__carpet.001",
       "translation": [
         0.00011795401363379199,
-        0.7812478678465425,
-        0.4993891533773087
-      ],
-      "rotation": [
-        0.7071068882942237,
-        0,
-        0,
-        0.7071066740788552
-      ],
-      "scale": [
-        1.5204018634467893,
-        1.520401811405677,
-        1.520401811405677
-      ],
-      "mesh": 9
-    },
-    {
-      "name": "Int_Sportage_2022_seatbelts_fabrics__seatbelts.001",
-      "translation": [
-        0,
-        0.9373068274676528,
-        0.861714972719708
+        0.78144312310378,
+        0.49942630858572556
       ],
       "rotation": [
         0.7071068882942236,
@@ -3070,18 +3050,38 @@
         0.7071066740788552
       ],
       "scale": [
-        0.6645633548968277,
-        0.6645633321498048,
-        0.6645633321498048
+        1.5203647082962526,
+        1.5203646562564122,
+        1.5203646562564122
+      ],
+      "mesh": 9
+    },
+    {
+      "name": "Int_Sportage_2022_seatbelts_fabrics__seatbelts.001",
+      "translation": [
+        0,
+        0.937306827441489,
+        0.8618013374609153
+      ],
+      "rotation": [
+        0.7071068882942236,
+        0,
+        0,
+        0.7071066740788552
+      ],
+      "scale": [
+        0.6642986149125107,
+        0.6642985921745495,
+        0.6642985921745495
       ],
       "mesh": 10
     },
     {
       "name": "Int_Sportage_2022_dash_stitchesalphacutoff__black.001",
       "translation": [
-        0.0006450271462270507,
-        0.9955589383970069,
-        0.3299366562735863
+        0.0016339492432635438,
+        1.1417094046761074,
+        0.3299367005493263
       ],
       "rotation": [
         0.7071068882942236,
@@ -3099,9 +3099,9 @@
     {
       "name": "Int_Sportage_2022_GLS_steeringwheel_stitches__black1.001",
       "translation": [
-        -0.37590781325307887,
-        1.0436604295207965,
-        -0.4004316540712985
+        -0.3759078227898218,
+        1.0433304964084618,
+        -0.40054884166462007
       ],
       "rotation": [
         0.7071068882942236,
@@ -3110,18 +3110,18 @@
         0.7071066740788552
       ],
       "scale": [
-        0.15207572597095975,
-        0.15207572076563208,
-        0.15207572076563208
+        0.15194346088297372,
+        0.15194345568217327,
+        0.15194345568217327
       ],
       "mesh": 12
     },
     {
       "name": "Int_Sportage_2022_base_Door_Trunk_icon.001",
       "translation": [
-        -0.006873702849290453,
-        1.0837880311637205,
-        0.6994214253385983
+        -0.01670181237082602,
+        1.0798636997207214,
+        0.6994214241497367
       ],
       "rotation": [
         0.7071068882942236,
@@ -3140,8 +3140,8 @@
       "name": "Int_seats_GTL_front_selfillumroughalpha__gtlinelogo.001",
       "translation": [
         0.0006006240710476618,
-        1.0838422482400778,
-        0.31375676945966235
+        1.0838432399716182,
+        0.31405283763473957
       ],
       "rotation": [
         0.7071068882942236,
@@ -3159,40 +3159,40 @@
     {
       "name": "Int_Sportage_2022_GLS_dash_naviscreen_cluster.001",
       "translation": [
-        -0.19249293850750604,
-        1.060516266887802,
-        -0.6129938546504707
+        -0.19236604260580137,
+        1.0608223580645524,
+        -0.6126158180801075
       ],
       "rotation": [
-        0.7071068882942236,
+        0.7071068882942235,
         0,
         0,
         0.7071066740788552
       ],
       "scale": [
-        0.38823966112197184,
-        0.38823964783310116,
-        0.38823964783310116
+        0.3865888318436852,
+        0.38658881861132,
+        0.38658881861132
       ],
       "mesh": 15
     },
     {
       "name": "Int_Sportage_2022_GLS_steeringwheel_paddles.001",
       "translation": [
-        -0.3763466941636793,
-        1.050896963128051,
-        -0.4504630821536969
+        -0.2552999344028546,
+        1.050011610181316,
+        -0.4507652827221955
       ],
       "rotation": [
-        0.7071068882942236,
+        0.7071068882942237,
         0,
         0,
         0.7071066740788552
       ],
       "scale": [
-        0.12570068078412078,
-        0.12570067648157196,
-        0.12570067648157196
+        0.0026139068019261913,
+        0.0026139067124560183,
+        0.0026139067124560183
       ],
       "mesh": 16
     },
@@ -3200,8 +3200,8 @@
       "name": "Ext_Sportage_2022_GLS_pillarfront_plasticdiffuse__speaker.001",
       "translation": [
         0,
-        0.8606108821599209,
-        -0.17052214993249357
+        0.8602048458059414,
+        -0.17052215005550075
       ],
       "rotation": [
         0.7071068882942236,
@@ -3219,7 +3219,7 @@
     {
       "name": "Int_Sportage_2022_airvent_plasticdiffuse__airbag.001",
       "translation": [
-        0.6645997471079284,
+        0.6642521900478258,
         0.9563719280822386,
         -0.67473828654621
       ],
@@ -3240,28 +3240,28 @@
       "name": "Int_Sportage_2022_ceilinglight_plasticdiffuse__dots.001",
       "translation": [
         0,
-        1.4832191038270175,
-        -0.0936521679583553
+        1.4831765318065144,
+        -0.09364745682039585
       ],
       "rotation": [
-        0.7071068882942236,
+        0.7071068882942237,
         0,
         0,
         0.7071066740788552
       ],
       "scale": [
-        0.05633051746344897,
-        0.056330515535338486,
-        0.056330515535338486
+        0.056320117645261014,
+        0.056320115717506496,
+        0.056320115717506496
       ],
       "mesh": 19
     },
     {
       "name": "Int_Sportage_2022_base_Door_FL_stitchesalphacutoff__white.001",
       "translation": [
-        -0.000003916024535755014,
-        0.8812302234108642,
-        0.13925826217506088
+        -0.027967010110815593,
+        0.8816509654095706,
+        0.1392991940018672
       ],
       "rotation": [
         0.7071068882942236,
@@ -3270,9 +3270,9 @@
         0.7071066740788552
       ],
       "scale": [
-        1.1599259975569094,
-        1.1599259578543542,
-        1.1599259578543542
+        1.1598850658561641,
+        1.15988502615501,
+        1.15988502615501
       ],
       "mesh": 20
     }
