@@ -5,7 +5,7 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const ACCENT = '#C9A24A';
 const GROUND_Y = -0.62;
-const ROOM = 'assets/studio.jpg';
+const ROOM = 'assets/studio.webp';
 
 const DIRT_HEAD = `
 uniform float uSplit;

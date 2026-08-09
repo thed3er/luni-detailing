@@ -56,11 +56,26 @@ do `.gitignore` stejně jako `car-opt.glb`.
 
 ## Otevřené k rozhodnutí
 
-1. **`assets/studio.jpg` (401 kB) není převedená.** Je to zároveň fotka
-   v „O nás" **a pozadí 3D scény** (`hero-car.js:8`), takže se načítá hned
-   na začátku s `fetchpriority="high"` — leží na kritické cestě k prvnímu
-   vykreslení. Je to teď největší jednotlivý obrázek na webu.
+1. ~~`assets/studio.jpg` není převedená~~ — vyřešeno, viz níže.
 2. **Doména v `og:image`, `og:url` a `canonical`** pořád ukazuje na
    `https://lunidetailing.cz`, web běží na `lunidetailing.tomasjelinek.dev`.
    Trvá ze tří předchozích zápisů.
 3. **GSAP je pořád 72 kB** kvůli jednomu `quickTo`.
+
+## Doplněno později: studio.jpg
+
+Zadavatel převedl i fotku studia. **401 kB → 138 kB**, a `studio-sm.jpg`
+87 kB → 45 kB.
+
+Přepsány dva odkazy: `<img>` v „O nás" a `ROOM` v `hero-car.js:8`. Ten druhý
+je důležitější — je to pozadí 3D scény, načítá se hned s `fetchpriority="high"`
+a leží na kritické cestě k prvnímu vykreslení. Naměřeno po přepisu:
+`studio.webp 135 kB`, první vykreslení celkem 5 643 kB.
+
+**`og:image` zůstal schválně na JPEG.** Robot Facebooku a WhatsAppu si
+s WebP v náhledu odkazu spolehlivě neporadí. Kvůli tomu zůstává v `assets/`
+i `studio.jpg`, přestože ho web sám nenačítá — je v HTML komentář, aby to
+někdo příště „neopravil". Doplněno `og:image:type`.
+
+`assets/studio-sm.jpg` ani `studio-sm.webp` se nepoužívají nikde — zbyly
+z prvního zmenšování `garaz.png`.
